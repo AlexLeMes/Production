@@ -79,8 +79,13 @@ public class playerController : MonoBehaviour {
         {
             moveSpeed = 5f;
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("PAUSE_GAME");
+            //REFERNCE GAME MANGER TO PAUSE GAME
+        }
 
-        //PLAYER STATS
+        //PLAYER STATS//
         if (_playerStats.PlayerStamina < _playerStats.maxStamina)
         {
             //canMove = false;

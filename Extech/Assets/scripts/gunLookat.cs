@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gunLookat : MonoBehaviour {
+    /*
+  TODO:
 
-	// Use this for initialization
-	void Start () {
+*/
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

@@ -3,17 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
+    /*
+        TODO:
+            //SET-UP SINGLETON
+    */
 
     public GameObject console;
 
-    // Use this for initialization
     void Start ()
     {
         console.SetActive(false);
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
+    public void pauseGame()
+    {
+        float time = Time.timeScale;
+
+        if(time == 0)
+        {
+            Time.timeScale = 1;
+            //REFERNCE INTERFACECONTROLLER TO TOGGLE PAUSE MENU
+
+        }
+        else if(time == 1)
+        {
+            Time.timeScale = 0;
+            //REFERNCE INTERFACECONTROLLER TO TOGGLE PAUSE MENU
+
+        }
+    }
 }
