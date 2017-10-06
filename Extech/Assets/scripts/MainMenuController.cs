@@ -8,9 +8,20 @@ public class MainMenuController : MonoBehaviour {
 
     int mainLevel = 1;
 
-	public void loadMainLevel()
+    public GameObject creditsMenu;
+
+    private void Awake()
+    {
+        creditsMenu.SetActive(false);
+    }
+    
+    public void loadMainLevel()
     {
         SceneManager.LoadScene(mainLevel);
+    }
+    public void toggleCreditsMenu()
+    {
+        creditsMenu.SetActive(!creditsMenu.activeSelf);
     }
     public void quitGame()
     {
