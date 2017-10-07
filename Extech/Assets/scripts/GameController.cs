@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     */
 
     public GameObject console;
+    public wepaon _weapon;
+    //EDIT THESE WHEN MADE INSTANCE
 
     void Start ()
     {
@@ -32,5 +34,10 @@ public class GameController : MonoBehaviour {
             //REFERNCE INTERFACECONTROLLER TO TOGGLE PAUSE MENU
 
         }
+    }
+
+    public void debugAddAmmo()
+    {
+        _weapon.ammo += 50;
     }
 }

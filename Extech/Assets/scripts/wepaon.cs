@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class wepaon : MonoBehaviour {
 
@@ -25,6 +26,8 @@ public class wepaon : MonoBehaviour {
     gunLookat _gunLookat;
     bool canshoot;
 
+    public Text ammoText;
+
     // Use this for initialization
     void Start ()
     {
@@ -44,6 +47,16 @@ public class wepaon : MonoBehaviour {
         Destroy(plasmashot, 2);
         weaponpos = transform.position;
 
+        ammoText.text = "Ammo: " + ammo.ToString();
+        if(ammo <= 0)
+        {
+            canshoot = false;
+        }
+        else if(ammo > 0)
+        {
+            canshoot = true;
+        }
+
         if (Input.GetMouseButton(0) && plasmadf == true) //starts the timer for charging the plasma weapon
         {
             powerattacktimer += Time.deltaTime;
@@ -60,7 +73,7 @@ public class wepaon : MonoBehaviour {
             powerattacktimer = 0;
             ischarging = false;
         }
-        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf == true)
+        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf == true && canshoot == true)
         {
             plasmagun();
             ammo --;
@@ -70,11 +83,20 @@ public class wepaon : MonoBehaviour {
             chooseweapon();
 
         }
-        if(Input.GetMouseButton(0) && flamethrower == true)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            flamethrower = true;
+            plasmadf = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            plasmadf = true;
+            flamethrower = false;
+        }
+        if (Input.GetMouseButton(0) && flamethrower == true)
         {
             flame.Play();
             gas--;
-
         }
         else
         {

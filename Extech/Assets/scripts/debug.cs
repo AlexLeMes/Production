@@ -29,6 +29,11 @@ public class debug : MonoBehaviour {
 
         switch (command)
         {
+            case "add ammo":
+                Debug.Log("<color=purple>CONSOLE: add ammo</color>");
+                gameController.debugAddAmmo();
+                //MAKE THIS CODE WORK
+                break;
             case "restart level":
                 Debug.Log("<color=purple>CONSOLE: restart level</color>");
                 Scene scene = SceneManager.GetActiveScene();

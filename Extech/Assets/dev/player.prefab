@@ -126,7 +126,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c372bb7c45a415545992bda9a2645d8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -216,8 +216,8 @@ MonoBehaviour:
   flamethrowerpicked: 0
   ammopack: {fileID: 0}
   gaspack: {fileID: 0}
-  ammo: 120
-  gas: 500
+  ammo: 10
+  gas: 2000
   plasma: {fileID: 1819649527317586, guid: a69974c61944f4741b76f0135295a367, type: 2}
   plasmashot: {fileID: 0}
   weaponpos: {x: 0, y: 0, z: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   force: 2000
   powerattack: 0
   plasmadf: 0
-  player: {fileID: 1759070967352830}
+  ammoText: {fileID: 0}
 --- !u!114 &114347819395774538
 MonoBehaviour:
   m_ObjectHideFlags: 1
