@@ -61,6 +61,7 @@ public class playerController : MonoBehaviour {
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
+        /*
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
@@ -69,6 +70,7 @@ public class playerController : MonoBehaviour {
         {
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
+        */
 
         if(Input.GetKey(KeyCode.LeftShift) && canBoost == true)
         {

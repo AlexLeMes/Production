@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class debug : MonoBehaviour {
@@ -28,10 +29,15 @@ public class debug : MonoBehaviour {
 
         switch (command)
         {
-            case "restart game":
-                //gameController.Instance.restartGame();
-                Debug.Log("<color=purple>CONSOLE: restart game</color>");
+            case "restart level":
+                Debug.Log("<color=purple>CONSOLE: restart level</color>");
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
                 //MAKE THIS CODE WORK
+                break;
+            case "restart game":
+                Debug.Log("<color=purple>CONSOLE: restart game</color>");
+                SceneManager.LoadScene(0);
                 break;
             default:
                 Debug.Log("<color=red>CONSOLE: UNKOWN COMMAND</color>");

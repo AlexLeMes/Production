@@ -13,6 +13,7 @@ public class gunLookat : MonoBehaviour {
     Transform target;
 
     public bool canShoot = false;
+    bool lookat = true;
     float shootDistance = 5f;
 
     private void Awake()
@@ -30,17 +31,23 @@ public class gunLookat : MonoBehaviour {
 	void Update ()
     {
         Vector3 targetPostition = new Vector3(target.position.x, target.position.y, target.position.z);
-        transform.LookAt(targetPostition);
+
+        if (lookat == true)
+        {
+            transform.LookAt(targetPostition);
+        }
 
         shootDistance = Vector3.Distance(targetPostition, transform.position);
 
         if (shootDistance >= 5f)
         {
             canShoot = true;
+            lookat = true;
         }
         else if (shootDistance < 5f)
         {
             canShoot = false;
+            lookat = false;
         }
     }
 }

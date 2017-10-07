@@ -13,11 +13,12 @@ public class keycard : MonoBehaviour {
     pickupKeyCard card;
 
     public int[] storedCards;
-    int storedCardPos = 0;   
+    int storedCardPos = 0;
+    int cards = 10;
 
     private void Start()
     {
-        storedCards = new int[5];
+        storedCards = new int[cards];
     }
 
     public void OnTriggerEnter(Collider other)
@@ -39,9 +40,9 @@ public class keycard : MonoBehaviour {
             cardID = card.cardID;
 
             storedCards[storedCardPos] = cardID;
+            storedCardPos++;
 
             Destroy(other.gameObject);
-            storedCardPos++;
         }
     }
 }

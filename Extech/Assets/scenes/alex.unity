@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &131495273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +435,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &427673186 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114473779072631222, guid: 48668aec2cbb86847a6b2a392d3a7c0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1646600061}
+  m_Script: {fileID: 11500000, guid: d602e77392fc93c4d98e20f7f95c9e23, type: 3}
 --- !u!1001 &562943378
 Prefab:
   m_ObjectHideFlags: 0
@@ -513,25 +519,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1241042420}
   m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &807397984 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1913661322111500, guid: d18620c61f3efb042b411bc3dd2107ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1271533572}
---- !u!114 &807397985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 807397984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
-  m_UseGraphicAlpha: 1
 --- !u!1001 &946043889
 Prefab:
   m_ObjectHideFlags: 0
@@ -737,13 +724,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114477570708075012, guid: bb58392f46ab1484f98127dd2d6884db,
+        type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 427673186}
+    - target: {fileID: 114477570708075012, guid: bb58392f46ab1484f98127dd2d6884db,
+        type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 427673186}
     - target: {fileID: 1438326789507796, guid: bb58392f46ab1484f98127dd2d6884db, type: 2}
       propertyPath: m_Name
       value: console
-      objectReference: {fileID: 0}
-    - target: {fileID: 1438326789507796, guid: bb58392f46ab1484f98127dd2d6884db, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb58392f46ab1484f98127dd2d6884db, type: 2}
@@ -1032,38 +1025,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114473779072631222, guid: 48668aec2cbb86847a6b2a392d3a7c0d,
-        type: 2}
-      propertyPath: commandLine
-      value: 
-      objectReference: {fileID: 703585858}
     - target: {fileID: 114638200849278588, guid: 48668aec2cbb86847a6b2a392d3a7c0d,
         type: 2}
       propertyPath: console
       value: 
       objectReference: {fileID: 1334605458}
+    - target: {fileID: 114473779072631222, guid: 48668aec2cbb86847a6b2a392d3a7c0d,
+        type: 2}
+      propertyPath: commandLine
+      value: 
+      objectReference: {fileID: 703585858}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48668aec2cbb86847a6b2a392d3a7c0d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1774549713 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1473798434101224, guid: d18620c61f3efb042b411bc3dd2107ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1271533572}
---- !u!114 &1774549714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774549713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 2, y: -2}
-  m_UseGraphicAlpha: 1
 --- !u!1 &1775013104
 GameObject:
   m_ObjectHideFlags: 0
