@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class wepaon : MonoBehaviour {
+
     public bool flamethrower;
 
     public float powerattacktimer = 0;
@@ -16,26 +17,33 @@ public class wepaon : MonoBehaviour {
     public GameObject plasmashot;
     public Vector3 weaponpos;
     public ParticleSystem flame;
-    public Rigidbody plasmarb;
+    Rigidbody plasmarb;
     public float force;
     public float powerattack;
     public bool plasmadf;
 
+    gunLookat _gunLookat;
+    bool canshoot;
+
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         ischarging = false;
         plasmadf = true;
         flamethrower = false;
-        flamethrowerpicked = false; 
+        flamethrowerpicked = false;
 
-
+        _gunLookat = this.gameObject.GetComponent<gunLookat>();
+        canshoot = _gunLookat.canShoot;
+        //  MAKE THIS BOOL WORK
     }
 
-    // Update is called once per frame
+
     void Update() {
         
         Destroy(plasmashot, 2);
         weaponpos = transform.position;
+
         if (Input.GetMouseButton(0) && plasmadf == true) //starts the timer for charging the plasma weapon
         {
             powerattacktimer += Time.deltaTime;
@@ -73,13 +81,12 @@ public class wepaon : MonoBehaviour {
             flame.Stop();
         }
 
-
-	}
+    }
     public void plasmagun()
     {
         plasmashot = Instantiate(plasma, weaponpos, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
-        plasmarb.AddForce(transform.right * force);
+        plasmarb.AddForce(transform.forward * force);
 
     }
     public void powerattackpl()
@@ -92,13 +99,12 @@ public class wepaon : MonoBehaviour {
     }
     public void chooseweapon()
     {
-        if(Input.GetKeyUp(KeyCode.Alpha1)&& flamethrowerpicked == true)
+        if(Input.GetKeyDown(KeyCode.Alpha1)&& flamethrowerpicked == true)
         {
             flamethrower = true;
             plasmadf = false;
-            
         }
-        else if( Input.GetKey(KeyCode.Alpha2))
+        else if( Input.GetKeyDown(KeyCode.Alpha2))
         {
             plasmadf = true;
             flamethrower = false;

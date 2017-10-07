@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\bulletImpact.cs" />
     <Compile Include="Assets\scripts\cameraController.cs" />
     <Compile Include="Assets\scripts\debug.cs" />
     <Compile Include="Assets\scripts\door.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\scripts\pickups.cs" />
     <Compile Include="Assets\scripts\playerController.cs" />
     <Compile Include="Assets\scripts\playerStats.cs" />
+    <Compile Include="Assets\scripts\selfDestroy.cs" />
     <Compile Include="Assets\scripts\wepaon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
