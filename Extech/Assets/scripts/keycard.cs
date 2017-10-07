@@ -14,11 +14,11 @@ public class keycard : MonoBehaviour {
 
     public int[] storedCards;
     int storedCardPos = 0;
-    int cards = 10;
+    int totalMapCards = 3;
 
     private void Start()
     {
-        storedCards = new int[cards];
+        storedCards = new int[totalMapCards];
     }
 
     public void OnTriggerEnter(Collider other)

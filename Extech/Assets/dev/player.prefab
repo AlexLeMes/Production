@@ -216,9 +216,9 @@ MonoBehaviour:
   flamethrowerpicked: 0
   ammopack: {fileID: 0}
   gaspack: {fileID: 0}
-  ammo: 10
+  ammo: 120
   gas: 2000
-  plasma: {fileID: 1819649527317586, guid: a69974c61944f4741b76f0135295a367, type: 2}
+  plasma: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
   plasmashot: {fileID: 0}
   weaponpos: {x: 0, y: 0, z: 0}
   flame: {fileID: 198892939802896360, guid: f49a034e6a83c4a479d805f0828a30ff, type: 2}

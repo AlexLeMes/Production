@@ -11,12 +11,12 @@ public class door : MonoBehaviour {
         if(cardID == doorID)
         {
             openDoor();
-            Debug.Log("openDoor");
+            Debug.Log("<color=green>VALID KEYCARD - openDoor</color>");
         }
         else if (cardID != doorID)
         {
             invalidKey();
-            Debug.Log("invalidKeycardID");
+            Debug.Log("<color=red>invalidKeycardID</color>");
         }
     }
 
