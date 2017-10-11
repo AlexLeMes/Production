@@ -44,6 +44,7 @@ public class wepaon : MonoBehaviour {
 
 
     void Update() {
+
         if (ischarging == true)
         {
             charging.Play();
