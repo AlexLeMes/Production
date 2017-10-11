@@ -22,6 +22,7 @@ public class wepaon : MonoBehaviour {
     public float force;
     public float powerattack;
     public bool plasmadf;
+    public ParticleSystem charging;
 
     gunLookat _gunLookat;
     bool canshoot;
@@ -43,6 +44,15 @@ public class wepaon : MonoBehaviour {
 
 
     void Update() {
+        if (ischarging == true)
+        {
+            charging.Play();
+
+        }
+        else
+        {
+            charging.Stop();
+        }
         
         Destroy(plasmashot, 2);
         weaponpos = transform.position;
@@ -57,23 +67,23 @@ public class wepaon : MonoBehaviour {
             canshoot = true;
         }
 
-        if (Input.GetMouseButton(0) && plasmadf == true) //starts the timer for charging the plasma weapon
+        if (Input.GetMouseButton(1) && plasmadf == true && canshoot==true) //starts the timer for charging the plasma weapon
         {
             powerattacktimer += Time.deltaTime;
             ischarging = true;
         }
-        if(Input.GetMouseButtonUp(0) && powerattacktimer > 2 && ischarging==true && plasmadf == true) 
+        if(Input.GetMouseButtonUp(1) && powerattacktimer > 2 && ischarging==true && plasmadf == true && canshoot == true) 
         {
             powerattackpl();
             ammo -= 3;
             powerattacktimer = 0;
         }
-        if(Input.GetMouseButtonUp(0) && powerattacktimer < 2 && plasmadf == true)
+        if(Input.GetMouseButtonUp(1) && powerattacktimer < 2 && plasmadf == true && canshoot == true)
         {
             powerattacktimer = 0;
             ischarging = false;
         }
-        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf == true && canshoot == true)
+        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf == true && canshoot == true && canshoot == true)
         {
             plasmagun();
             ammo --;
@@ -93,7 +103,7 @@ public class wepaon : MonoBehaviour {
             plasmadf = true;
             flamethrower = false;
         }
-        if (Input.GetMouseButton(0) && flamethrower == true)
+        if (Input.GetMouseButton(0) && flamethrower == true && canshoot == true)
         {
             flame.Play();
             gas--;
@@ -115,8 +125,8 @@ public class wepaon : MonoBehaviour {
     {
         plasmashot = Instantiate(plasma, weaponpos, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
-        plasmarb.AddForce(transform.right * force * powerattack);
-        plasmashot.transform.localScale = new Vector3(3, 3, 3);
+        plasmarb.AddForce(transform.forward * force * powerattack);
+        plasmashot.transform.localScale = new Vector3(5, 5, 5);
 
     }
     public void chooseweapon()
@@ -141,5 +151,6 @@ public class wepaon : MonoBehaviour {
             flamethrowerpicked = true;
         }
     }
+    
 
 }
