@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 46
+  controlID: 47
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 47
+  controlID: 48
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 48
+  controlID: 49
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,19 +325,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/scenes
+    - Assets/dev
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/scenes
+  - Assets/dev
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Alex\Desktop\gitHub\Production\Extech
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 84}
-    m_SelectedIDs: e0290000
-    m_LastClickedID: 10720
-    m_ExpandedIDs: 00000000cc290000e6290000f6290000fa29000000ca9a3bffffff7f
+    m_SelectedIDs: 40260000
+    m_LastClickedID: 9792
+    m_ExpandedIDs: 00000000322600005e260000a6260000e426000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -365,7 +365,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc290000e6290000f6290000fa290000
+    m_ExpandedIDs: 00000000322600005e260000a6260000e4260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,10 +480,10 @@ MonoBehaviour:
     width: 343
     height: 552
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 297}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 7aa7faff1ab8fbffb2b8fbff0ac3fbffc4d4fbff1ce1fbff6050fcfff450fcfffe50fcff4067fcffc0a2fcff62b1fcfffeeffcffde2afdff6a3ffdff7e7afdff6ea4feff52a6feffbcc5feffd49dffff1c9fffff9cc7ffff9ec7ffffa0c7ffff8ef0ffffd6f1ffff00000000
+    m_ExpandedIDs: 18f7ffff1afcffff00000000a4290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +502,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - alex
+  - main
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -533,14 +533,14 @@ MonoBehaviour:
     width: 1033
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 1855.9759152353192
+  lastFramingTime: 1866.0105987773686
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -49.602062, y: -12.138493, z: -30.636826}
+    m_Target: {x: 81.6429, y: -181.75322, z: 27.771606}
     speed: 2
-    m_Value: {x: -49.602062, y: -12.138493, z: -30.636826}
+    m_Value: {x: 81.6429, y: -181.75322, z: 27.771606}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -563,18 +563,18 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.080135964, y: -0.9133371, z: 0.21946472, w: 0.3335098}
+    m_Target: {x: 0.30903345, y: -0.037378166, z: 0.012156673, w: 0.9502386}
     speed: 2
-    m_Value: {x: 0.080135964, y: -0.9133371, z: 0.21946472, w: 0.3335098}
+    m_Value: {x: 0.30903345, y: -0.037378166, z: 0.012156673, w: 0.9502386}
   m_Size:
-    m_Target: 97.46645
+    m_Target: 395.29224
     speed: 2
-    m_Value: 97.46645
+    m_Value: 395.29224
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.29136598, y: 0.509194, z: -0.18836369, w: 0.7876208}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
