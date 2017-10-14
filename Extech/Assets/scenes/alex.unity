@@ -108,16 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &122239907 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1173507327193632, guid: 9a24c678fa4e7d249a03897669891abe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1499086056}
---- !u!4 &122239910 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4988467786120826, guid: 9a24c678fa4e7d249a03897669891abe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1499086056}
 --- !u!1 &131495272
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,26 +327,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114068435131922490, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: console
-      value: 
-      objectReference: {fileID: 1334605458}
-    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 2041412091}
-    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 122239910}
-    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: locationObject
-      value: 
-      objectReference: {fileID: 122239907}
     - target: {fileID: 114702242576344706, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: healthBar
@@ -367,6 +337,16 @@ Prefab:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 1271533573}
+    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
+        type: 2}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 2041412091}
+    - target: {fileID: 114068435131922490, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
+        type: 2}
+      propertyPath: console
+      value: 
+      objectReference: {fileID: 1334605458}
     - target: {fileID: 114638715953974324, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: ammoText

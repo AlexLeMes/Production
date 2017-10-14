@@ -10,7 +10,7 @@ public class gunLookat : MonoBehaviour {
 
     public GameObject player;
     mouseLookat _mouseLookat;
-    Transform target;
+    Vector3 target;
 
     public bool canShoot = false;
     bool lookat = true;
@@ -24,20 +24,20 @@ public class gunLookat : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        target = _mouseLookat.target;
+        target = _mouseLookat.position;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Vector3 targetPostition = new Vector3(target.position.x, target.position.y, target.position.z);
+        Vector3 targetPostition = new Vector3(target.x, target.y, target.z);
 
         if (lookat == true)
         {
-            transform.LookAt(targetPostition);
+            transform.LookAt(target);
         }
 
-        shootDistance = Vector3.Distance(targetPostition, transform.position);
+        shootDistance = Vector3.Distance(target, transform.position);
 
         if (shootDistance >= 5f)
         {
