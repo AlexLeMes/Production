@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour {
         the mouse position is a certain distance away from the player
 */
     mouseLookat _mouseLookat;
-    Transform target;
+    Vector3 target;
     playerStats _playerStats;
 
     public GameObject console;  //CHANGE TO TO TALK TO GAME MANGER - WHEN MADE AN INSTANCE
@@ -20,7 +20,8 @@ public class playerController : MonoBehaviour {
     [Header("PLAYER SPEEDS")]
     //PLAYER MOVE SPEED
     public float moveSpeed = 5f;
-    public float rotateSpeed = 2f;
+    public float lookatRotateSpeed = 0.1f;
+    public float rotateSpeed = 45f;
     public float boostSpeed = 10f;
 
     bool canMove = true;
@@ -38,17 +39,13 @@ public class playerController : MonoBehaviour {
     private void Start()
     {
         //LOOKAT MOVEMENT TARGET - FROM mouseLookat script
-        target = _mouseLookat.target;
+        target = _mouseLookat.position;
     }
 
     void Update ()
     {
         //PLAYER LOOK AT MOVEMENT//
-
-        //LOOKAT TARGET = THE LOOKAT OBJECTS X AND Z BUT USING THE PLAYERS Y POSITION
-        //SO THAT THE PLAYER ONLY ROTATES ON THE Y AXIS
-        Vector3 targetPostition = new Vector3(target.position.x, this.transform.position.y, target.position.z);
-        //MOVING THE PLAYER TO LOOKAT THE TARGET POSITION
+        Vector3 targetPostition = new Vector3(target.x, this.transform.position.y, target.z);
         transform.LookAt(targetPostition);
 
 
@@ -61,18 +58,16 @@ public class playerController : MonoBehaviour {
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
-        /*
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
         }
-        */
 
-        if(Input.GetKey(KeyCode.LeftShift) && canBoost == true)
+        if (Input.GetKey(KeyCode.LeftShift) && canBoost == true)
         {
             moveSpeed = boostSpeed;
             _playerStats.decreasestamina();

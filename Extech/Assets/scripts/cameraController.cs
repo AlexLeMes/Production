@@ -17,20 +17,27 @@ public class cameraController : MonoBehaviour {
     private Vector3 velocity = Vector3.zero;
 
     public Vector3 offset;
-    public Vector3 rotation;
+    //public Vector3 rotation;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         pTrans = player.GetComponent<Transform>();
 
-        transform.Rotate(rotation);
+        //transform.Rotate(rotation);
     }
 
     private void LateUpdate()
     {
+        /*
         playerPos = pTrans.transform.position + offset;
         gotoPos = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothing);
         transform.position = gotoPos;
+        */
+        float direction = pTrans.transform.eulerAngles.y;
+        Quaternion rotation = Quaternion.Euler(0, direction, 0);
+
+        transform.position = pTrans.transform.position + rotation * offset;
+        transform.LookAt(pTrans.transform);
     }     
 }
