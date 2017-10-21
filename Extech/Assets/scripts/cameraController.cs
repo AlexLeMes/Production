@@ -17,14 +17,11 @@ public class cameraController : MonoBehaviour {
     private Vector3 velocity = Vector3.zero;
 
     public Vector3 offset;
-    //public Vector3 rotation;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         pTrans = player.GetComponent<Transform>();
-
-        //transform.Rotate(rotation);
     }
 
     private void LateUpdate()

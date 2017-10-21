@@ -337,16 +337,16 @@ Prefab:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 1271533573}
-    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 2041412091}
     - target: {fileID: 114068435131922490, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: console
       value: 
       objectReference: {fileID: 1334605458}
+    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
+        type: 2}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 2041412091}
     - target: {fileID: 114638715953974324, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: ammoText

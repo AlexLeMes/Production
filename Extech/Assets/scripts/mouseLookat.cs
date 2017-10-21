@@ -8,25 +8,19 @@ public class mouseLookat : MonoBehaviour {
 
   */
 
+   //no longer using?
+    /*
+
     public Camera _camera;
 
+    float speed = 500f;
+
     public Vector3 position;
-    
 
-    public void FixedUpdate()
+    private void Update()
     {
+        //transform.Rotate(0f, Input.GetAxis("Mouse X") * speed * Time.deltaTime, 0f)
 
-          position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100f);
-          _camera.ScreenToWorldPoint(Input.mousePosition);
-         Debug.Log(Input.mousePosition);
-         
-      
-
-    }
-    /*Update()
-    {
-        Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100f);
-        position = _camera.ScreenToWorldPoint(position);
     }
     */
 }

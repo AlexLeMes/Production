@@ -11,7 +11,6 @@ public class playerController : MonoBehaviour {
         the mouse position is a certain distance away from the player
 */
     mouseLookat _mouseLookat;
-    Vector3 target;
     playerStats _playerStats;
 
     public GameObject console;  //CHANGE TO TO TALK TO GAME MANGER - WHEN MADE AN INSTANCE
@@ -21,7 +20,7 @@ public class playerController : MonoBehaviour {
     //PLAYER MOVE SPEED
     public float moveSpeed = 5f;
     public float lookatRotateSpeed = 0.1f;
-    public float rotateSpeed = 45f;
+    public float rotateSpeed = 125f;
     public float boostSpeed = 10f;
 
     bool canMove = true;
@@ -36,19 +35,8 @@ public class playerController : MonoBehaviour {
         _playerStats = this.gameObject.GetComponent<playerStats>();
     }
 
-    private void Start()
-    {
-        //LOOKAT MOVEMENT TARGET - FROM mouseLookat script
-        target = _mouseLookat.position;
-    }
-
     void Update ()
     {
-        //PLAYER LOOK AT MOVEMENT//
-        Vector3 targetPostition = new Vector3(target.x, this.transform.position.y, target.z);
-        transform.LookAt(targetPostition);
-
-
         //PLAYER KEY INPUT MOVEMENT//
         if (Input.GetKey(KeyCode.W))
         {
