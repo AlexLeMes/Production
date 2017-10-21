@@ -11,11 +11,22 @@ public class mouseLookat : MonoBehaviour {
     public Camera _camera;
 
     public Vector3 position;
+    
 
-    void Update()
+    public void FixedUpdate()
+    {
+
+          position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100f);
+          _camera.ScreenToWorldPoint(Input.mousePosition);
+         Debug.Log(Input.mousePosition);
+         
+      
+
+    }
+    /*Update()
     {
         Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100f);
         position = _camera.ScreenToWorldPoint(position);
     }
-    
+    */
 }
