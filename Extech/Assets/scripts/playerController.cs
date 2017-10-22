@@ -87,7 +87,7 @@ public class playerController : MonoBehaviour {
         }
 
         //CONSOLE with `
-        if (Input.GetKeyDown(KeyCode.BackQuote))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             console.SetActive(!console.activeSelf);
         }

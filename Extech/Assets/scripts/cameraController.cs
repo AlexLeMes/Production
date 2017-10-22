@@ -26,11 +26,6 @@ public class cameraController : MonoBehaviour {
 
     private void LateUpdate()
     {
-        /*
-        playerPos = pTrans.transform.position + offset;
-        gotoPos = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothing);
-        transform.position = gotoPos;
-        */
         float direction = pTrans.transform.eulerAngles.y;
         Quaternion rotation = Quaternion.Euler(0, direction, 0);
 
