@@ -21,16 +21,15 @@ public class gunLookat : MonoBehaviour {
         _mouseLookat = player.gameObject.GetComponent<mouseLookat>();
     }
 
-    // Use this for initialization
     void Start ()
     {
-        target = _mouseLookat.position;
+        //target = _mouseLookat.position;
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
-        Vector3 targetPostition = new Vector3(target.x, target.y, target.z);
+        //target = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+        //transform.LookAt(target);
 
         if (lookat == true)
         {
