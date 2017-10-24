@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerController : MonoBehaviour {
+public class player : MonoBehaviour {
 
 /*
     TODO:
         - set the player to only be able to move when
         the mouse position is a certain distance away from the player
 */
-    mouseLookat _mouseLookat;
-    playerStats _playerStats;
+    character _character;
 
     public GameObject console;  //CHANGE TO TO TALK TO GAME MANGER - WHEN MADE AN INSTANCE
     [Space(10)]
 
     [Header("PLAYER SPEEDS")]
     //PLAYER MOVE SPEED
-    public float moveSpeed = 5f;
-    public float lookatRotateSpeed = 0.1f;
-    public float rotateSpeed = 125f;
-    public float boostSpeed = 10f;
+    float moveSpeed = 1f;
+    float rotateSpeed = 1f;
+    float boostSpeed = 1f;
+    [Space(10)]
+
+    [Header("PLAYER UI ELEMENTS")]
+    public Slider healthBar;
+    public Slider staminaBar;
 
     bool canMove = true;
     bool moving = false;
@@ -30,9 +33,14 @@ public class playerController : MonoBehaviour {
 
     private void Awake()
     {
-        //mouseLookat script
-        _mouseLookat = this.gameObject.GetComponent<mouseLookat>();
-        _playerStats = this.gameObject.GetComponent<playerStats>();
+        _character = this.gameObject.GetComponent<character>();
+    }
+
+    private void Start()
+    {
+        moveSpeed = _character.moveSpeed;
+        rotateSpeed = _character.rotateSpeed;
+        boostSpeed = _character.boostSpeed;
     }
 
     void Update ()
@@ -58,7 +66,7 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) && canBoost == true)
         {
             moveSpeed = boostSpeed;
-            _playerStats.decreasestamina();
+            //_playerStats.decreasestamina();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -71,25 +79,31 @@ public class playerController : MonoBehaviour {
         }
 
         //PLAYER STATS//
-        if (_playerStats.PlayerStamina < _playerStats.maxStamina)
+        /*
+        if (Stamina < maxStamina)
         {
-            //canMove = false;
-            _playerStats.PlayerStamina += 0.05f * Time.deltaTime;
+            canMove = false;
+            Stamina += 0.05f * Time.deltaTime;
         }
 
-        if (_playerStats.PlayerStamina <= 0.1f)
+        if (Stamina <= 0.1f)
         {
             canBoost = false;
         }
-        else
+        else if(Stamina > 0.5f)
         {
             canBoost = true;
         }
-
+        */
         //CONSOLE with `
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             console.SetActive(!console.activeSelf);
         }
+    }
+
+    public void die()
+    {
+        //PLAYER DEATH LOGIC HERE
     }
 }

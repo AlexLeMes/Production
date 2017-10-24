@@ -75,10 +75,9 @@ GameObject:
   - component: {fileID: 54685259856169304}
   - component: {fileID: 23914418006272256}
   - component: {fileID: 114068435131922490}
-  - component: {fileID: 114068089103161182}
   - component: {fileID: 114371690683066600}
-  - component: {fileID: 114702242576344706}
   - component: {fileID: 114110411929872228}
+  - component: {fileID: 114211962240711322}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -279,19 +278,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114068089103161182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593658582690610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7fc2229faa7f484483946f496aa39f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
 --- !u!114 &114068435131922490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,10 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   console: {fileID: 0}
-  moveSpeed: 5
-  lookatRotateSpeed: 8
-  rotateSpeed: 250
-  boostSpeed: 10
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
 --- !u!114 &114110411929872228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +304,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedCards: 
+--- !u!114 &114211962240711322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593658582690610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c692d5b3313cd740bc827d7e155bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  stamina: 1
+  moveSpeed: 6
+  rotateSpeed: 105
+  boostSpeed: 8
+  alive: 1
 --- !u!114 &114371690683066600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1593658582690610}
+  target: {x: 0, y: 0, z: 0}
   canShoot: 0
 --- !u!114 &114638715953974324
 MonoBehaviour:
@@ -373,24 +375,6 @@ MonoBehaviour:
   plasmadf: 0
   charging: {fileID: 198596214132354286}
   ammoText: {fileID: 0}
---- !u!114 &114702242576344706
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593658582690610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088f5620779eb714ca901bff3fb0a4c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  PlayerHealth: 1
-  healthBar: {fileID: 0}
-  maxStamina: 1
-  PlayerStamina: 1
-  staminaBar: {fileID: 0}
-  canmove: 1
 --- !u!198 &198244738029765776
 ParticleSystem:
   m_ObjectHideFlags: 1

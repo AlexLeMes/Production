@@ -327,26 +327,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114702242576344706, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1271533574}
-    - target: {fileID: 114702242576344706, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: staminaBar
-      value: 
-      objectReference: {fileID: 1271533573}
     - target: {fileID: 114068435131922490, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: console
       value: 
       objectReference: {fileID: 1334605458}
-    - target: {fileID: 114068089103161182, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
-        type: 2}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 2041412091}
     - target: {fileID: 114638715953974324, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: ammoText
@@ -695,18 +680,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d18620c61f3efb042b411bc3dd2107ba, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1271533573 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114309451024722820, guid: d18620c61f3efb042b411bc3dd2107ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1271533572}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &1271533574 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114207465139199308, guid: d18620c61f3efb042b411bc3dd2107ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1271533572}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1334605458 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1345193770466096, guid: f6e0176f993f959468e05fc4cb7664bb,
@@ -1312,8 +1285,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &2041412091 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20787143992434644, guid: 5b79221642cf0954085a1efe40e35b71,
-    type: 2}
-  m_PrefabInternal: {fileID: 678809643}

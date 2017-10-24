@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class pickups : MonoBehaviour {
+
     private wepaon weapons;
     public GameObject weapon;
-    private playerStats playerstats;
+    private character player;
+
+    public float healAmmount = 0;
+    public int ammoType = 0;
+    public int ammo = 0;
    
     private void Awake()
     {
-        
         weapons = weapon.gameObject.GetComponent<wepaon>();
-        playerstats = this.gameObject.GetComponent<playerStats>();
+        player = this.gameObject.GetComponent<character>();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "health")
         {
-            playerstats.PlayerHealth += 20;
+            player.heal(healAmmount);
             Debug.Log("player_pickedup_health");
             Destroy(other.gameObject);
         }

@@ -14,7 +14,7 @@ public class keycard : MonoBehaviour {
 
     public int[] storedCards;
     int storedCardPos = 0;
-    int totalMapCards = 3;
+    int totalMapCards = 5;
 
     private void Start()
     {
