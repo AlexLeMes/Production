@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
     */
 
     public GameObject console;
-    public wepaon _weapon;
+    public weapon _weapon;
     //EDIT THESE WHEN MADE INSTANCE
 
     void Start ()
