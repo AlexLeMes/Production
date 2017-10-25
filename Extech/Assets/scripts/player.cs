@@ -17,8 +17,8 @@ public class player : MonoBehaviour {
 
     [Header("PLAYER SPEEDS")]
     //PLAYER MOVE SPEED
-    float moveSpeed = 1f;
-    float rotateSpeed = 1f;
+    float moveSpeed = 5f;
+    float rotateSpeed = 90f;
     float boostSpeed = 1f;
     [Space(10)]
 
@@ -63,11 +63,11 @@ public class player : MonoBehaviour {
         {
             transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) )
         {
             transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A)   )
         {
             transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
         }
