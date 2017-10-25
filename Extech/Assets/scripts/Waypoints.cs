@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityScript.Lang;
 
 public class Waypoints : MonoBehaviour
 {
@@ -29,7 +32,9 @@ public class Waypoints : MonoBehaviour
         //- enemy           - waypoint                         -distance       -not at max
         if (Vector3.Distance(transform.position, waypoints[Target].transform.position) < 0.01  && playerspotted==false )
         {
+            
             Target++;
+            
             if (Target == waypoints.Length)
             {
 
@@ -41,7 +46,9 @@ public class Waypoints : MonoBehaviour
         }
         else if (playerspotted == true)
         {
-            transform.position= Vector3.MoveTowards(this.transform.position, player.transform.position, speed-10);
+           
+            
+            transform.position= Vector3.MoveTowards(this.transform.position, waypoints[Target].transform.position, speed-10);
             
             
                 
@@ -50,6 +57,8 @@ public class Waypoints : MonoBehaviour
         }
         else
         {
+            
+            
             transform.position = Vector3.MoveTowards(transform.position, waypoints[Target].transform.position, speed * Time.deltaTime);
         }
 
