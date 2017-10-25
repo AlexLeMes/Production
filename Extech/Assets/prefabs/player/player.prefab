@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 54685259856169304}
   - component: {fileID: 23914418006272256}
   - component: {fileID: 114068435131922490}
-  - component: {fileID: 114371690683066600}
   - component: {fileID: 114110411929872228}
   - component: {fileID: 114211962240711322}
   m_Layer: 0
@@ -95,8 +94,8 @@ GameObject:
   - component: {fileID: 4913758439374138}
   - component: {fileID: 33753375038453276}
   - component: {fileID: 23392133494777684}
-  - component: {fileID: 114638715953974324}
   - component: {fileID: 114602215204439800}
+  - component: {fileID: 114174420247174920}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -137,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593658582690610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_Children:
   - {fileID: 4913758439374138}
@@ -303,7 +302,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc3627977f0ca4408082f40c13aa88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardID: 0
   storedCards: 
+--- !u!114 &114174420247174920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977799706985318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ac353f8e643cc4d909028414eac0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamethrower: 0
+  powerattacktimer: 0
+  ischarging: 0
+  flamethrowerpicked: 0
+  ammopack: {fileID: 0}
+  gaspack: {fileID: 0}
+  ammo: 0
+  gas: 0
+  plasma: {fileID: 0}
+  plasmashot: {fileID: 0}
+  weaponpos: {x: 0, y: 0, z: 0}
+  flame: {fileID: 0}
+  force: 0
+  powerattack: 0
+  plasmadf: 0
+  charging: {fileID: 0}
+  ammoText: {fileID: 0}
 --- !u!114 &114211962240711322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,22 +345,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   stamina: 1
+  alive: 1
   moveSpeed: 6
   rotateSpeed: 105
   boostSpeed: 8
-  alive: 1
---- !u!114 &114371690683066600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593658582690610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b53a2f397bb2b649a2310fe41539f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 1977799706985318}
+  weaponOneAmmo: 0
 --- !u!114 &114602215204439800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,34 +364,6 @@ MonoBehaviour:
   player: {fileID: 1593658582690610}
   target: {x: 0, y: 0, z: 0}
   canShoot: 0
---- !u!114 &114638715953974324
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1977799706985318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362d9b9592a296348bbfeda570d2bbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flamethrower: 0
-  powerattacktimer: 0
-  ischarging: 0
-  flamethrowerpicked: 0
-  ammopack: {fileID: 0}
-  gaspack: {fileID: 0}
-  ammo: 120
-  gas: 2000
-  plasma: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
-  plasmashot: {fileID: 0}
-  weaponpos: {x: 0, y: 0, z: 0}
-  flame: {fileID: 198723978618965276}
-  force: 1700
-  powerattack: 5
-  plasmadf: 0
-  charging: {fileID: 198596214132354286}
-  ammoText: {fileID: 0}
 --- !u!198 &198244738029765776
 ParticleSystem:
   m_ObjectHideFlags: 1

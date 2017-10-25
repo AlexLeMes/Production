@@ -4,44 +4,73 @@ using UnityEngine;
 
 public class pickups : MonoBehaviour {
 
-    private wepaon weapons;
-    public GameObject weapon;
     private character player;
+    private keycard _keycard;
 
     public float healAmmount = 0;
-    public int ammoType = 0;
-    public int ammo = 0;
+    public int ammoType = 0; // 0 = gas   --- plasma is infinite, so no ID for it
+    public int ammoToGive = 0;
+    public int cardID;
+
+    public bool healthPickup = false;
+    public bool ammoPickup = false;
+    public bool keycard = false;
    
     private void Awake()
     {
-        weapons = weapon.gameObject.GetComponent<wepaon>();
         player = this.gameObject.GetComponent<character>();
     }
 
+
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "health")
+        if (other.gameObject.tag == "Player")
         {
-            player.heal(healAmmount);
-            Debug.Log("player_pickedup_health");
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.tag == "ammo")
-        {
-            weapons.ammo += 10;
-            Debug.Log("player_pickedup_ammo");
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.tag == "special")
-        {
-            Debug.Log("player_pickedup_special");
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.tag == "gas")
-        {
-            weapons.gas += 50;
-            Debug.Log("player_pickedup_gas");
-            Destroy(other.gameObject);
+            Debug.Log("pickup - hit player");
+
+            if(healthPickup)
+            {
+                //player.heal(healAmmount);
+                player = other.gameObject.GetComponent<character>();
+
+                if (_keycard == null)
+                {
+                    return;
+                }
+                else
+                {
+                    player.heal(healAmmount);
+                }
+            }
+            if(ammoPickup)
+            {
+                //player.giveAmmo(ammoToGive, ammoType);
+                player = other.gameObject.GetComponent<character>();
+
+                if (player == null)
+                {
+                    return;
+                }
+                else
+                {
+                    player.giveAmmo(ammoToGive, ammoType);
+                }
+            }
+            if(keycard)
+            {
+                _keycard = other.gameObject.GetComponent<keycard>();
+
+                if(_keycard == null)
+                {
+                    return;
+                }
+                else
+                {
+                    _keycard.keycardPickup(cardID);
+                }
+            }
+
+            Destroy(this.gameObject);
         }
     }
 }

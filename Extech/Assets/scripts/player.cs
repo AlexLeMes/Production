@@ -25,6 +25,9 @@ public class player : MonoBehaviour {
     [Header("PLAYER UI ELEMENTS")]
     public Slider healthBar;
     public Slider staminaBar;
+    float health = 1;
+    float stamnia = 1f;
+    float maxStam = 1;
 
     bool canMove = true;
     bool moving = false;
@@ -41,6 +44,12 @@ public class player : MonoBehaviour {
         moveSpeed = _character.moveSpeed;
         rotateSpeed = _character.rotateSpeed;
         boostSpeed = _character.boostSpeed;
+
+        health = _character.health;
+        stamnia = _character.stamina;
+
+        healthBar.value = health;
+        staminaBar.value = maxStam;
     }
 
     void Update ()
@@ -78,23 +87,25 @@ public class player : MonoBehaviour {
             //REFERNCE GAME MANGER TO PAUSE GAME
         }
 
-        //PLAYER STATS//
-        /*
-        if (Stamina < maxStamina)
+        
+        if (stamnia < maxStam)
         {
             canMove = false;
-            Stamina += 0.05f * Time.deltaTime;
+            stamnia += 0.05f * Time.deltaTime;
         }
 
-        if (Stamina <= 0.1f)
+        if (stamnia <= 0.1f)
         {
             canBoost = false;
         }
-        else if(Stamina > 0.5f)
+        else if(stamnia > 0.5f)
         {
             canBoost = true;
         }
-        */
+
+        healthBar.value = health;
+        staminaBar.value = stamnia;
+
         //CONSOLE with `
         if (Input.GetKeyDown(KeyCode.C))
         {
