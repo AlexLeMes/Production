@@ -9,6 +9,7 @@ TagManager:
   - keycard
   - ammo
   - gas
+  - enemy
   layers:
   - Default
   - TransparentFX

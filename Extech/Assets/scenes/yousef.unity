@@ -464,6 +464,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 148016026}
   m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!198 &240548671 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198352198984223966, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1491369722}
 --- !u!1001 &305466707
 Prefab:
   m_ObjectHideFlags: 0
@@ -512,7 +517,7 @@ Prefab:
         type: 2}
       propertyPath: _weapon
       value: 
-      objectReference: {fileID: 1650730276}
+      objectReference: {fileID: 0}
     - target: {fileID: 114473779072631222, guid: 48668aec2cbb86847a6b2a392d3a7c0d,
         type: 2}
       propertyPath: commandLine
@@ -521,6 +526,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48668aec2cbb86847a6b2a392d3a7c0d, type: 2}
   m_IsPrefabParent: 0
+--- !u!198 &442221114 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198257072683375624, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1491369722}
 --- !u!1 &448140037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1372,24 @@ GameObject:
   m_PrefabParentObject: {fileID: 1759070967352830, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
     type: 2}
   m_PrefabInternal: {fileID: 1491369722}
+--- !u!114 &872983194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872983183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c692d5b3313cd740bc827d7e155bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  stamina: 1
+  alive: 1
+  moveSpeed: 0
+  rotateSpeed: 0
+  boostSpeed: 0
+  weaponOneAmmo: 0
 --- !u!1 &1018462284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,20 +1778,20 @@ MonoBehaviour:
   flamethrower: 0
   powerattacktimer: 0
   ischarging: 0
-  flamethrowerpicked: 0
+  flamethrowerpicked: 1
   ammopack: {fileID: 0}
   gaspack: {fileID: 0}
-  ammo: 0
-  gas: 0
-  plasma: {fileID: 0}
-  plasmashot: {fileID: 0}
+  ammo: 50
+  gas: 50
+  plasma: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
+  plasmashot: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
   weaponpos: {x: 0, y: 0, z: 0}
-  flame: {fileID: 0}
-  force: 0
-  powerattack: 0
+  flame: {fileID: 442221114}
+  force: 4000
+  powerattack: 3
   plasmadf: 0
-  charging: {fileID: 0}
-  ammoText: {fileID: 0}
+  charging: {fileID: 240548671}
+  ammoText: {fileID: 793257700}
 --- !u!1001 &1491369722
 Prefab:
   m_ObjectHideFlags: 0
@@ -1853,7 +1881,38 @@ Prefab:
       propertyPath: mousesensitivity.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114029760991356938, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114873015616327666, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114384082124865188, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114873015616327666, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 107972518}
+    - target: {fileID: 114873015616327666, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 594060376}
+    - target: {fileID: 114873015616327666, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
+        type: 2}
+      propertyPath: rotateSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114172237099060306, guid: 99f8882cdbabbba4b86420b3e2be5ec4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 99f8882cdbabbba4b86420b3e2be5ec4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1495345396
@@ -2127,12 +2186,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1650730276 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114172237099060306, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1491369722}
-  m_Script: {fileID: 11500000, guid: 362d9b9592a296348bbfeda570d2bbe5, type: 3}
 --- !u!1 &1654625922 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1438326789507796, guid: bb58392f46ab1484f98127dd2d6884db,
@@ -2683,7 +2736,7 @@ GameObject:
   - component: {fileID: 2037314920}
   m_Layer: 0
   m_Name: AI (1)
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2745,9 +2798,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2037314919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.973938, y: 32.51216, z: -115.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.87, y: 0, z: -5.63}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18

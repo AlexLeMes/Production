@@ -56,7 +56,7 @@ public class weapon : MonoBehaviour {
             charging.Stop();
         }
 
-        Destroy(plasmashot, 2);
+        
         weaponpos = transform.position;
 
         ammoText.text = "Ammo: " + ammo.ToString();
@@ -128,7 +128,7 @@ public class weapon : MonoBehaviour {
         plasmashot = Instantiate(plasma, weaponpos, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force * powerattack);
-        plasmashot.transform.localScale = new Vector3(5, 5, 5);
+        plasmashot.transform.localScale = new Vector3(3, 3, 3);
 
     }
     public void chooseweapon()

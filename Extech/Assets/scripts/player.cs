@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class player : MonoBehaviour {
+public class player : character {
 
 /*
     TODO:
         - set the player to only be able to move when
         the mouse position is a certain distance away from the player
 */
-    character _character;
+   // character _character;
 
     public GameObject console;  //CHANGE TO TO TALK TO GAME MANGER - WHEN MADE AN INSTANCE
     [Space(10)]
 
     [Header("PLAYER SPEEDS")]
+    
     //PLAYER MOVE SPEED
-    float moveSpeed = 5f;
-    float rotateSpeed = 90f;
-    float boostSpeed = 1f;
+   //public float movespeed = 5f;
+  // public float rotateSpeed = 90f;
+   //public float boostSpeed = 1f;
     [Space(10)]
 
     [Header("PLAYER UI ELEMENTS")]
     public Slider healthBar;
     public Slider staminaBar;
-    float health = 1;
+    
     float stamnia = 1f;
     float maxStam = 1;
 
@@ -36,17 +37,18 @@ public class player : MonoBehaviour {
 
     private void Awake()
     {
-        _character = this.gameObject.GetComponent<character>();
+       // _character = this.gameObject.GetComponent<character>();
     }
 
-    private void Start()
+    private new void Start()
     {
-        moveSpeed = _character.moveSpeed;
-        rotateSpeed = _character.rotateSpeed;
-        boostSpeed = _character.boostSpeed;
+        health = 1f;
+        moveSpeed = 5f;
+        rotateSpeed = 90f;
+        boostSpeed = 10f;
+        stamina = 1;
 
-        health = _character.health;
-        stamnia = _character.stamina;
+        
 
         healthBar.value = health;
         staminaBar.value = maxStam;
@@ -74,12 +76,15 @@ public class player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && canBoost == true)
         {
+            
             moveSpeed = boostSpeed;
+            Debug.Log(stamina);
             //_playerStats.decreasestamina();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = 5f;
+            
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -117,4 +122,14 @@ public class player : MonoBehaviour {
     {
         //PLAYER DEATH LOGIC HERE
     }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            takeDamage(0.1f);
+            Debug.Log(health);
+        }
+        
+    }
+
 }

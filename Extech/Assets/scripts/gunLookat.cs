@@ -11,6 +11,7 @@ public class gunLookat : MonoBehaviour {
     public GameObject player;
     mouseLookat _mouseLookat;
     public Vector3 target;
+    
 
     public bool canShoot = false;
     bool lookat = true;
@@ -18,8 +19,9 @@ public class gunLookat : MonoBehaviour {
 	
 	void Update ()
     {
+        
         Vector3 mousePos = Input.mousePosition;
-        target = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 100.0f));
+        target = Camera.main.ScreenToWorldPoint((new Vector3(mousePos.x, mousePos.y, 100.0f)));
         //transform.LookAt(target);
 
        if (lookat == true)
