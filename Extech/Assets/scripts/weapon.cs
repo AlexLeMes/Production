@@ -10,12 +10,12 @@ public class weapon : MonoBehaviour {
     public float powerattacktimer = 0;
     public bool ischarging;
     public bool flamethrowerpicked;
-    public GameObject ammopack;
-    public GameObject gaspack;
+    //public GameObject ammopack;
+    //public GameObject gaspack;
     public int ammo;
     public int gas;
     public GameObject plasma;
-    public GameObject plasmashot;
+    GameObject plasmashot;
     public Vector3 weaponpos;
     public ParticleSystem flame;
     Rigidbody plasmarb;

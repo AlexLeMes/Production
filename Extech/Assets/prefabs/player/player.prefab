@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114068435131922490}
   - component: {fileID: 114110411929872228}
   - component: {fileID: 114211962240711322}
+  - component: {fileID: 114417022871232390}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -136,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593658582690610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_Children:
   - {fileID: 4913758439374138}
@@ -288,6 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cb4c4a360d2d04fb62daa52c547a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  stamina: 1
+  alive: 1
+  moveSpeed: 0
+  rotateSpeed: 0
+  boostSpeed: 0
+  weaponOneAmmo: 0
   console: {fileID: 0}
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
@@ -310,7 +318,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977799706985318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27ac353f8e643cc4d909028414eac0cd, type: 3}
   m_Name: 
@@ -319,18 +327,15 @@ MonoBehaviour:
   powerattacktimer: 0
   ischarging: 0
   flamethrowerpicked: 0
-  ammopack: {fileID: 0}
-  gaspack: {fileID: 0}
-  ammo: 0
+  ammo: 900
   gas: 0
-  plasma: {fileID: 0}
-  plasmashot: {fileID: 0}
+  plasma: {fileID: 1819649527317586, guid: a69974c61944f4741b76f0135295a367, type: 2}
   weaponpos: {x: 0, y: 0, z: 0}
-  flame: {fileID: 0}
-  force: 0
+  flame: {fileID: 198244738029765776}
+  force: 2000
   powerattack: 0
   plasmadf: 0
-  charging: {fileID: 0}
+  charging: {fileID: 198596214132354286}
   ammoText: {fileID: 0}
 --- !u!114 &114211962240711322
 MonoBehaviour:
@@ -350,6 +355,18 @@ MonoBehaviour:
   rotateSpeed: 105
   boostSpeed: 8
   weaponOneAmmo: 0
+--- !u!114 &114417022871232390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593658582690610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fc2229faa7f484483946f496aa39f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousesensitivity: {x: 0, y: 0, z: 0}
 --- !u!114 &114602215204439800
 MonoBehaviour:
   m_ObjectHideFlags: 1

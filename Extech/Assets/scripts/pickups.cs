@@ -33,7 +33,7 @@ public class pickups : MonoBehaviour {
                 //player.heal(healAmmount);
                 player = other.gameObject.GetComponent<character>();
 
-                if (_keycard == null)
+                if (player == null)
                 {
                     return;
                 }
