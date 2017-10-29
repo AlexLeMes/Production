@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8808,6 +8808,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4630008477402970, guid: 823c5b484d08c4a4eab77c20436fadf6,
     type: 2}
   m_PrefabInternal: {fileID: 1058344999}
+--- !u!114 &1060986415 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114861836412034458, guid: d18620c61f3efb042b411bc3dd2107ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 466514720}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1061181236
 GameObject:
   m_ObjectHideFlags: 0
@@ -14957,6 +14963,11 @@ Prefab:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 466514721}
+    - target: {fileID: 114174420247174920, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
+        type: 2}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 1060986415}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24ef38f6e1b65c94dbd7b13a425922a4, type: 2}
   m_IsPrefabParent: 0

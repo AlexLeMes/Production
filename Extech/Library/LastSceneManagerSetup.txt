@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/scenes/alex.unity
+=======
+- path: Assets/scenes/main.unity
+>>>>>>> 21a8856dd427ef120465d206e04f8aab26a21ad3
   isLoaded: 1
   isActive: 1

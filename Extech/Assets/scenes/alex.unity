@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44300273, g: 0.49219579, b: 0.5719249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44300345, g: 0.49219584, b: 0.57192576, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -238,6 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7f34da08d817943ae177d39f4a2b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pTrans: {fileID: 0}
   hight: 25
 --- !u!20 &131495276
 Camera:
@@ -649,6 +651,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114174420247174920, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
+        type: 2}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 1271533573}
     - target: {fileID: 114068435131922490, guid: 24ef38f6e1b65c94dbd7b13a425922a4,
         type: 2}
       propertyPath: console
@@ -1018,7 +1025,11 @@ Prefab:
     - target: {fileID: 224587947854624188, guid: d18620c61f3efb042b411bc3dd2107ba,
         type: 2}
       propertyPath: m_SizeDelta.x
+<<<<<<< HEAD
       value: 419.20996
+=======
+      value: 170.20996
+>>>>>>> 21a8856dd427ef120465d206e04f8aab26a21ad3
       objectReference: {fileID: 0}
     - target: {fileID: 224569493616325522, guid: d18620c61f3efb042b411bc3dd2107ba,
         type: 2}
@@ -1028,11 +1039,21 @@ Prefab:
     - target: {fileID: 224569493616325522, guid: d18620c61f3efb042b411bc3dd2107ba,
         type: 2}
       propertyPath: m_SizeDelta.x
+<<<<<<< HEAD
       value: 419.20996
+=======
+      value: 170.20996
+>>>>>>> 21a8856dd427ef120465d206e04f8aab26a21ad3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d18620c61f3efb042b411bc3dd2107ba, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1271533573 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114861836412034458, guid: d18620c61f3efb042b411bc3dd2107ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271533572}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1334605458 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1345193770466096, guid: f6e0176f993f959468e05fc4cb7664bb,
