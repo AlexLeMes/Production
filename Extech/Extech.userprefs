@@ -1,15 +1,11 @@
 ﻿<Properties StartupConfiguration="{49359E72-B849-2741-508F-95E8499A9D80}|">
   <MonoDevelop.Ide.ItemProperties.Extech PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/pickups.cs">
     <Files>
-      <File FileName="Assets/scripts/weapon.cs" Line="13" Column="33" />
-      <File FileName="Assets/scripts/pickups.cs" Line="52" Column="28" />
-      <File FileName="Assets/scripts/player.cs" Line="129" Column="30" />
-      <File FileName="Assets/scripts/character.cs" Line="36" Column="27" />
-      <File FileName="Assets/scripts/mouseLookat.cs" Line="27" Column="56" />
-      <File FileName="Assets/scripts/cameraController.cs" Line="30" Column="65" />
-      <File FileName="Assets/scripts/gunLookat.cs" Line="27" Column="27" />
-      <File FileName="Assets/scripts/GameController.cs" Line="17" Column="34" />
+      <File FileName="Assets/scripts/pickups.cs" Line="38" Column="28" />
+      <File FileName="Assets/scripts/objectives.cs" Line="28" Column="31" />
+      <File FileName="Assets/scripts/GameController.cs" Line="11" Column="31" />
+      <File FileName="Assets/scripts/debug.cs" Line="37" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
