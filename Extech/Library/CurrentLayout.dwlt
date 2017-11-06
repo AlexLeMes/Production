@@ -41,9 +41,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 1366
+    height: 685
+  m_MinSize: {x: 950, y: 542}
+=======
     width: 1431
     height: 795
   m_MinSize: {x: 950, y: 300}
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +115,15 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 1600
+=======
+<<<<<<< HEAD
+  controlID: 569
+=======
+  controlID: 8028
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +147,15 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 1601
+=======
+<<<<<<< HEAD
+  controlID: 506
+=======
+  controlID: 8029
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +179,15 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 1602
+=======
+<<<<<<< HEAD
+  controlID: 548
+=======
+  controlID: 8030
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,10 +204,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 288
+    height: 303
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+=======
     width: 202
     height: 474
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -366,9 +403,19 @@ MonoBehaviour:
     height: 453
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+    m_SelectedIDs: ec060000
+    m_LastClickedID: 0
+    m_ExpandedIDs: f4f9ffff00000000
+=======
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: e642ffff2a47ffff484afffffcd7ffff1afcffff000000006e2d00007e310000
+=======
+    m_ExpandedIDs: def7fcfffcf8fcff3cf9fcff2a1cfeff881cfeff8a1cfeff921cfeffec27feff8861feffe861fefff061feff2046ffff7c47ffff7a53ffff845effff1662ffff2a77ffff00000000d0460000ba830000
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -582,10 +629,23 @@ MonoBehaviour:
   m_LastProjectPath: /Users/AlexLeM/Desktop/SAE/gitHub/Production/Extech
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
+    scrollPos: {x: 0, y: 410}
+    m_SelectedIDs: 7a270000
+    m_LastClickedID: 10106
+    m_ExpandedIDs: 00000000cc26000056280000f82800004e290000442a0000842a00008e2a000000ca9a3bffffff7f
+=======
     scrollPos: {x: 0, y: 155}
+<<<<<<< HEAD
     m_SelectedIDs: d2260000
     m_LastClickedID: 9938
     m_ExpandedIDs: 0000000022260000b0270000b2290000f2290000fc29000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 363a0000
+    m_LastClickedID: 14902
+    m_ExpandedIDs: 00000000ea390000763a00002c3b0000303b0000323b000000ca9a3bffffff7f
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +673,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000022260000b0270000b2290000f2290000fc29000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000cc26000056280000f82800004e290000442a0000842a00008e2a000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 00000000ea390000763a00002c3b0000303b0000323b000000ca9a3bffffff7f
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
+>>>>>>> origin/master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -716,10 +784,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 970
+    y: 92
+    width: 396
+    height: 614
+=======
     x: 1116
     y: 93
     width: 317
     height: 724
+>>>>>>> 485b93cd054a8e9fc2f2a1162685424db64239ce
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
