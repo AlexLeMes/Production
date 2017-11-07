@@ -89,6 +89,7 @@
     <Compile Include="Assets\scripts\keycard.cs" />
     <Compile Include="Assets\scripts\MainMenuController.cs" />
     <Compile Include="Assets\scripts\mouseLookat.cs" />
+    <Compile Include="Assets\scripts\objectives.cs" />
     <Compile Include="Assets\scripts\PathFinding.cs" />
     <Compile Include="Assets\scripts\pickups.cs" />
     <Compile Include="Assets\scripts\player.cs" />
