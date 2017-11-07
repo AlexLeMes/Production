@@ -16,14 +16,34 @@ public class cameraController : MonoBehaviour {
     public float smoothing = 0.1f;
     private Vector3 velocity = Vector3.zero;
 
+    public bool moveTowardsPlayer = false;
+    public float moveTowardsPlayerSpeed = 5f;
+
     public Vector3 offset;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         pTrans = player.GetComponent<Transform>();
+        transform.position = pTrans.transform.position + offset;
     }
 
+    private void Update()
+    {
+        if(!moveTowardsPlayer)
+        {
+            Vector3.MoveTowards(transform.position, player.transform.position, moveTowardsPlayerSpeed * Time.deltaTime);
+            transform.LookAt(pTrans.transform);
+        }
+        else if(moveTowardsPlayer)
+        {
+            transform.position = pTrans.transform.position + offset;
+            transform.LookAt(pTrans.transform);
+        }
+
+    }
+
+    /*
     private void LateUpdate()
     {
         float direction = pTrans.transform.eulerAngles.y;
@@ -32,4 +52,5 @@ public class cameraController : MonoBehaviour {
         transform.position = pTrans.transform.position + rotation * offset;
         transform.LookAt(pTrans.transform);
     }     
+    */
 }
