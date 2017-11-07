@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593658582690610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_Children:
   - {fileID: 4913758439374138}
@@ -297,8 +297,10 @@ MonoBehaviour:
   boostSpeed: 0
   weaponOneAmmo: 0
   console: {fileID: 0}
+  deathMenu: {fileID: 0}
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!114 &114110411929872228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,7 +334,7 @@ MonoBehaviour:
   plasma: {fileID: 1819649527317586, guid: a69974c61944f4741b76f0135295a367, type: 2}
   weaponpos: {x: 0, y: 0, z: 0}
   flame: {fileID: 198244738029765776}
-  force: 2000
+  force: 3000
   powerattack: 0
   plasmadf: 0
   charging: {fileID: 198596214132354286}
