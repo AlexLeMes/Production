@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/scenes/alex2.unity
+=======
+<<<<<<< HEAD
+- path: Assets/scenes/main.unity
+=======
+- path: Assets/scenes/yousef.unity
+>>>>>>> origin/master
+>>>>>>> df33d18a7f9b54ae45ab72f1a3706aa0c7248f97
   isLoaded: 1
   isActive: 1
