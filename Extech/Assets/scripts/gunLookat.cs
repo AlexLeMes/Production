@@ -21,10 +21,11 @@ public class gunLookat : MonoBehaviour {
     {
         
         Vector3 mousePos = Input.mousePosition;
-        target = Camera.main.ScreenToWorldPoint((new Vector3(mousePos.x, mousePos.y, 100.0f)));
+         target = Camera.main.ScreenToWorldPoint((new Vector3(mousePos.x, mousePos.y, 100.0f)));
+        
         //transform.LookAt(target);
 
-       if (lookat == true)
+        if (lookat == true)
        {
            transform.LookAt(target);
        }

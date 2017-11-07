@@ -44,6 +44,7 @@ public class PathFinding : MonoBehaviour
                     if (!Physics.Raycast(NodesPositions[i], dir, dir.magnitude))
                     {
 
+
                     }
                 }
             }

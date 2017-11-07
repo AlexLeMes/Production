@@ -1,15 +1,14 @@
-﻿<Properties StartupConfiguration="{49359E72-B849-2741-508F-95E8499A9D80}|">
-  <MonoDevelop.Ide.ItemProperties.Extech PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/GameController.cs">
+﻿<Properties StartupConfiguration="{49359E72-B849-2741-508F-95E8499A9D80}|" StartupItem="Extech.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\pickups.cs">
     <Files>
-      <File FileName="Assets/scripts/weapon.cs" Line="13" Column="33" />
-      <File FileName="Assets/scripts/pickups.cs" Line="52" Column="28" />
-      <File FileName="Assets/scripts/player.cs" Line="129" Column="30" />
-      <File FileName="Assets/scripts/character.cs" Line="36" Column="27" />
-      <File FileName="Assets/scripts/mouseLookat.cs" Line="27" Column="56" />
-      <File FileName="Assets/scripts/cameraController.cs" Line="30" Column="65" />
-      <File FileName="Assets/scripts/gunLookat.cs" Line="27" Column="27" />
-      <File FileName="Assets/scripts/GameController.cs" Line="17" Column="34" />
+      <File FileName="Assets\scripts\weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\pickups.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\player.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\character.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\mouseLookat.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\cameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\gunLookat.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GameController.cs" Line="17" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -18,4 +17,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Extech PreferredExecutionTarget="Unity.Editor" />
 </Properties>

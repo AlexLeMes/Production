@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class pickups : MonoBehaviour {
 
-    private character player;
+    public player player;
     private keycard _keycard;
 
-    public float healAmmount = 0;
+    public float healAmmount = 5;
     public int ammoType = 0; // 0 = gas   --- plasma is infinite, so no ID for it
     public int ammoToGive = 0;
     public int cardID;
@@ -16,36 +16,37 @@ public class pickups : MonoBehaviour {
     public bool ammoPickup = false;
     public bool keycard = false;
    
-    private void Awake()
+    public void Awake()
     {
-        player = this.gameObject.GetComponent<character>();
+        player = gameObject.GetComponent<player>();
     }
 
 
-    void OnTriggerEnter(Collider other)
+   public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.GetComponent<player>() != null)
         {
             Debug.Log("pickup - hit player");
 
-            if(healthPickup)
+            if (healthPickup == true && player != null)
             {
-                //player.heal(healAmmount);
-                player = other.gameObject.GetComponent<character>();
-
-                if (player == null)
-                {
-                    return;
-                }
-                else
-                {
-                    player.heal(healAmmount);
-                }
+                player.heal(healAmmount);
+                healthPickup = false;
+                Debug.Log("yes");
             }
+            else
+            {
+                return;
+            }
+                //player.heal(healAmmount);
+
+
+               
+            
             if(ammoPickup)
             {
                 //player.giveAmmo(ammoToGive, ammoType);
-                player = other.gameObject.GetComponent<character>();
+                player = other.gameObject.GetComponent<player>();
 
                 if (player == null)
                 {

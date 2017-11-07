@@ -34,9 +34,11 @@ public class player : character {
     bool moving = false;
     bool canBoost = true;
     bool boosting = true;
+    private pickups pickup;
 
     private void Awake()
     {
+        pickup = gameObject.GetComponent<pickups>();
        // _character = this.gameObject.GetComponent<character>();
     }
 
@@ -67,11 +69,11 @@ public class player : character {
         }
         if (Input.GetKey(KeyCode.D) )
         {
-            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A)   )
         {
-            transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && canBoost == true)
@@ -129,7 +131,7 @@ public class player : character {
             takeDamage(0.1f);
             Debug.Log(health);
         }
-        
+      
     }
 
 }
