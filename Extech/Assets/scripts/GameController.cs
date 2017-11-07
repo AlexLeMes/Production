@@ -20,18 +20,14 @@ public class GameController : MonoBehaviour {
 	
     public void pauseGame()
     {
-        float time = Time.timeScale;
-
-        if(time == 0)
+        if(Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            //REFERNCE INTERFACECONTROLLER TO TOGGLE PAUSE MENU
 
         }
-        else if(time == 1)
+        else if(Time.timeScale == 1)
         {
             Time.timeScale = 0;
-            //REFERNCE INTERFACECONTROLLER TO TOGGLE PAUSE MENU
 
         }
     }
