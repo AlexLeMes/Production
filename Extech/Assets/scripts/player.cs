@@ -39,15 +39,14 @@ public class player : character {
 
     private void Awake()
     {
-<<<<<<< HEAD
+
         // _character = this.gameObject.GetComponent<character>();
         deathMenu.SetActive(false);
 
         _camera = camera.GetComponent<cameraController>();
-=======
+
         pickup = gameObject.GetComponent<pickups>();
        // _character = this.gameObject.GetComponent<character>();
->>>>>>> 7eec05b3d8a1d970b031d732b6f1c15ee83ea8fe
     }
 
     private new void Start()
@@ -151,11 +150,7 @@ public class player : character {
             takeDamage(0.1f);
             Debug.Log(health);
         }
-<<<<<<< HEAD
         */
-=======
-      
->>>>>>> 7eec05b3d8a1d970b031d732b6f1c15ee83ea8fe
     }
-
+    
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/yousef.unity
+- path: Assets/scenes/alex2.unity
   isLoaded: 1
   isActive: 1
