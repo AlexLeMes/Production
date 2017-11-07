@@ -13,19 +13,20 @@ public class player : character {
    // character _character;
 
     public GameObject console;  //CHANGE TO TO TALK TO GAME MANGER - WHEN MADE AN INSTANCE
-    [Space(10)]
 
-    [Header("PLAYER SPEEDS")]
+    public GameObject deathMenu;
     
     //PLAYER MOVE SPEED
    //public float movespeed = 5f;
   // public float rotateSpeed = 90f;
    //public float boostSpeed = 1f;
-    [Space(10)]
 
-    [Header("PLAYER UI ELEMENTS")]
     public Slider healthBar;
     public Slider staminaBar;
+
+    cameraController _camera;
+    public GameObject camera;
+    Vector3 cameraPos;
     
     float stamnia = 1f;
     float maxStam = 1;
@@ -34,10 +35,19 @@ public class player : character {
     bool moving = false;
     bool canBoost = true;
     bool boosting = true;
+    private pickups pickup;
 
     private void Awake()
     {
+<<<<<<< HEAD
+        // _character = this.gameObject.GetComponent<character>();
+        deathMenu.SetActive(false);
+
+        _camera = camera.GetComponent<cameraController>();
+=======
+        pickup = gameObject.GetComponent<pickups>();
        // _character = this.gameObject.GetComponent<character>();
+>>>>>>> 7eec05b3d8a1d970b031d732b6f1c15ee83ea8fe
     }
 
     private new void Start()
@@ -48,15 +58,29 @@ public class player : character {
         boostSpeed = 10f;
         stamina = 1;
 
-        
-
         healthBar.value = health;
         staminaBar.value = maxStam;
     }
 
     void Update ()
     {
-        //PLAYER KEY INPUT MOVEMENT//
+        //cameraPos = camera.transform.position;
+
+        Debug.DrawRay(transform.position, camera.transform.position, Color.green);
+
+        if (!Physics.Raycast(transform.position, camera.transform.position))
+        {
+            _camera.moveTowardsPlayer = true;
+        }
+        else
+        {
+            _camera.moveTowardsPlayer = false;
+        }
+
+        //Debug.Log(!Physics.Raycast(transform.position, camera.transform.position));
+
+
+            //PLAYER KEY INPUT MOVEMENT//
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * moveSpeed *Time.deltaTime);
@@ -67,11 +91,11 @@ public class player : character {
         }
         if (Input.GetKey(KeyCode.D) )
         {
-            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A)   )
         {
-            transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && canBoost == true)
@@ -84,14 +108,7 @@ public class player : character {
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = 5f;
-            
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("PAUSE_GAME");
-            //REFERNCE GAME MANGER TO PAUSE GAME
-        }
-
         
         if (stamnia < maxStam)
         {
@@ -121,15 +138,24 @@ public class player : character {
     public void die()
     {
         //PLAYER DEATH LOGIC HERE
+        // send game manager spawnLocation
+        deathMenu.SetActive(true);
+        GameController.instance.pauseGame();
     }
+
     public void OnCollisionEnter(Collision collision)
     {
+        /*
         if (collision.gameObject.tag == "enemy")
         {
             takeDamage(0.1f);
             Debug.Log(health);
         }
-        
+<<<<<<< HEAD
+        */
+=======
+      
+>>>>>>> 7eec05b3d8a1d970b031d732b6f1c15ee83ea8fe
     }
 
 }

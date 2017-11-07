@@ -10,14 +10,6 @@ public class debug : MonoBehaviour {
     public InputField commandLine;
     string command;
 
-    public GameObject managerObj; //CHANGE THIS WHEN MADE AN INSTANCE
-    GameController gameController;
-
-    private void Awake()
-    {
-        gameController = managerObj.GetComponent<GameController>();
-    }
-
     public void clearCommandLine()
     {
         commandLine.text = "";
@@ -29,12 +21,12 @@ public class debug : MonoBehaviour {
 
         switch (command)
         {
-			case "god":
-				//add code here
+			case "respawn":
+                GameController.instance.respawn();
 				break;
             case "add ammo":
                 Debug.Log("<color=purple>CONSOLE: add ammo</color>");
-                gameController.debugAddAmmo();
+                GameController.instance.debugAddAmmo();
                 break;
             case "restart level":
                 Debug.Log("<color=purple>CONSOLE: restart level</color>");
