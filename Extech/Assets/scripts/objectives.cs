@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class objectives : MonoBehaviour {
 
     public string objectTiveText;
-    public Text objText;
+    public Text _objectiveText;
 
     public bool isActive = false;
 
@@ -18,21 +18,22 @@ public class objectives : MonoBehaviour {
 
     public GameObject successMenu;
 
+    triggerObjective _objectiveTrigger;
+
     private void Awake()
     {
         explostion.SetActive(false);
         successMenu.SetActive(false);
-
     }
 
     private void Update()
     {
-        objText.text = objectTiveText;
+        _objectiveText.text = objectTiveText;
 
-        if(isActive && objectiveTime <= 0)
+        if(isActive && objectiveTime > 0)
         {
             objectiveTime -= Time.deltaTime;
-            objText.text = objectiveTime.ToString() + objectTiveText;
+            _objectiveText.text = objectiveTime.ToString("F2") + objectTiveText;
 		}
 
         if(!objectiveComplete && objectiveTime <= 0)
@@ -54,12 +55,32 @@ public class objectives : MonoBehaviour {
     {
         successMenu.SetActive(true);
         // manger set time scale to 0 here
-
     }
 
     public void modText(string text)
     {
         objectTiveText = text;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool status = false;
+
+        if(other.gameObject.tag == "objective")
+        {
+            _objectiveTrigger = other.gameObject.GetComponent<triggerObjective>();
+
+            status = true;
+
+            if (_objectiveText == null)
+            {
+                return;
+            }
+            else
+            {
+                _objectiveTrigger.completeObjective(status);
+            }
+        }
     }
 
 }

@@ -11,6 +11,10 @@ TagManager:
   - gas
   - enemy
   - healthpickup
+  - bullet
+  - ObjectiveManager
+  - objective
+  - playerWeapon
   layers:
   - Default
   - TransparentFX

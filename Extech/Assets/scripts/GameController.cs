@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -10,6 +12,9 @@ public class GameController : MonoBehaviour {
         TODO:
             //SET-UP SINGLETON
     */
+
+    int mainMenu = 0;
+    public int mainLevel = 1;
 
     public GameObject console;
     public weapon _weapon;
@@ -82,10 +87,15 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void gotoMenu()
+    {
+        SceneManager.LoadScene(mainMenu);
+    }
+
     
     public void debugAddAmmo()
     {
-        _weapon.ammo += 50;
+        _weapon.gas += 50;
     }
     
 }

@@ -18,15 +18,14 @@ public class player : character {
     
     //PLAYER MOVE SPEED
    //public float movespeed = 5f;
-  // public float rotateSpeed = 90f;
+   //public float rotateSpeed = 90f;
    //public float boostSpeed = 1f;
 
-    public Slider healthBar;
+    //public Slider healthBar;
     public Slider staminaBar;
 
     cameraController _camera;
     public GameObject camera;
-    Vector3 cameraPos;
     
     float stamnia = 1f;
     float maxStam = 1;
@@ -35,7 +34,7 @@ public class player : character {
     bool moving = false;
     bool canBoost = true;
     bool boosting = true;
-    private pickups pickup;
+    //private pickups pickup;
 
     private void Awake()
     {
@@ -45,7 +44,7 @@ public class player : character {
 
         _camera = camera.GetComponent<cameraController>();
 
-        pickup = gameObject.GetComponent<pickups>();
+        //pickup = gameObject.GetComponent<pickups>();
        // _character = this.gameObject.GetComponent<character>();
     }
 
@@ -57,13 +56,12 @@ public class player : character {
         boostSpeed = 10f;
         stamina = 1;
 
-        healthBar.value = health;
+        //healthBar.value = health;
         staminaBar.value = maxStam;
     }
 
     void Update ()
     {
-        //cameraPos = camera.transform.position;
 
         Debug.DrawRay(transform.position, camera.transform.position, Color.green);
 
@@ -101,7 +99,7 @@ public class player : character {
         {
             
             moveSpeed = boostSpeed;
-            Debug.Log(stamina);
+            //Debug.Log(stamina);
             //_playerStats.decreasestamina();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -119,12 +117,12 @@ public class player : character {
         {
             canBoost = false;
         }
-        else if(stamnia > 0.5f)
+        else if(stamnia > 0.2f)
         {
             canBoost = true;
         }
 
-        healthBar.value = health;
+        //healthBar.value = health;
         staminaBar.value = stamnia;
 
         //CONSOLE with `
@@ -140,6 +138,8 @@ public class player : character {
         // send game manager spawnLocation
         deathMenu.SetActive(true);
         GameController.instance.pauseGame();
+
+        //CHANGE THIS LOGIC TO BE INSIDE CHARACTER SCRIPT?
     }
 
     public void OnCollisionEnter(Collision collision)

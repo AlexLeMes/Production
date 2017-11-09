@@ -8,26 +8,39 @@ public class weapon : MonoBehaviour {
     public bool flamethrower;
 
     public float powerattacktimer = 0;
+
     public bool ischarging;
     public bool flamethrowerpicked;
     //public GameObject ammopack;
     //public GameObject gaspack;
-    public int ammo;
+
     public int gas;
+
     public GameObject plasma;
+    public GameObject flameBullet;
+
     GameObject plasmashot;
+    GameObject flameShot;
+
     public Vector3 weaponpos;
     public ParticleSystem flame;
+
     Rigidbody plasmarb;
+    Rigidbody flameBulletRB;
+
     public float force;
+    public float flameForce;
     public float powerattack;
     public bool plasmadf;
-    public ParticleSystem charging;
 
-    gunLookat _gunLookat;
+    public ParticleSystem chargingEffect;
+
+    //gunLookat _gunLookat;
     bool canshoot;
 
     public Text ammoText;
+    public Text currentWeapon;
+    bool showAmmo = false;
 
     // Use this for initialization
     void Start()
@@ -35,79 +48,105 @@ public class weapon : MonoBehaviour {
         ischarging = false;
         plasmadf = true;
         flamethrower = false;
-        flamethrowerpicked = false;
 
-        _gunLookat = this.gameObject.GetComponent<gunLookat>();
-        canshoot = _gunLookat.canShoot;
+        showAmmo = false;
+
+        currentWeapon.text = "Plasma Gun";
+
+        //flamethrowerpicked = false;
+
+        //_gunLookat = this.gameObject.GetComponent<gunLookat>();
+        //canshoot = _gunLookat.canShoot;
         //  MAKE THIS BOOL WORK
     }
 
 
     void Update()
     {
-
-        if (ischarging == true)
-        {
-            charging.Play();
-
-        }
-        else
-        {
-            charging.Stop();
-        }
-
         
-        weaponpos = transform.position;
+        if (ischarging)
+        {
+            chargingEffect.Play();
+        }
+        else if(!ischarging)
+        {
+            chargingEffect.Stop();
+        }
+        
 
-        ammoText.text = "Ammo: " + ammo.ToString();
-        if (ammo <= 0)
+        //weaponpos = transform.position;
+
+        if (gas <= 0)
         {
             canshoot = false;
         }
-        else if (ammo > 0)
+        else if (gas > 0)
         {
             canshoot = true;
         }
 
-        if (Input.GetMouseButton(1) && plasmadf == true && canshoot == true) //starts the timer for charging the plasma weapon
+        if (Input.GetMouseButton(1) && plasmadf) //starts the timer for charging the plasma weapon
         {
             powerattacktimer += Time.deltaTime;
             ischarging = true;
         }
-        if (Input.GetMouseButtonUp(1) && powerattacktimer > 2 && ischarging == true && plasmadf == true && canshoot == true)
+        if (Input.GetMouseButtonUp(1) && powerattacktimer > 2 && ischarging && plasmadf)
         {
             powerattackpl();
-            ammo -= 3;
             powerattacktimer = 0;
         }
-        if (Input.GetMouseButtonUp(1) && powerattacktimer < 2 && plasmadf == true && canshoot == true)
+        if (Input.GetMouseButtonUp(1) && powerattacktimer < 2 && plasmadf)
         {
             powerattacktimer = 0;
             ischarging = false;
         }
-        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf == true && canshoot == true && canshoot == true)
+        if (Input.GetMouseButtonDown(0) && powerattacktimer < 2 && plasmadf)
         {
-            plasmagun();
-            ammo--;
+            shootPlasmaGun();
         }
-        if (flamethrowerpicked == true)
+
+        /*
+        if (flamethrowerpicked)
         {
             chooseweapon();
 
         }
+        */
+
+
+        //choose weapon
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            flamethrower = true;
-            plasmadf = false;
+            flamethrower = false;
+            plasmadf = true;
+            showAmmo = false;
+
+            currentWeapon.text = "Plasma Gun";
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            plasmadf = true;
-            flamethrower = false;
+            plasmadf = false;
+            flamethrower = true;
+            showAmmo = true;
+
+            currentWeapon.text = "Flamethrower";
         }
-        if (Input.GetMouseButton(0) && flamethrower == true && canshoot == true)
+
+        if(showAmmo)
+        {
+            ammoText.text = "GAS: " + gas.ToString();
+        }
+        else if(!showAmmo)
+        {
+            ammoText.text = " ";
+        }
+
+
+        if (Input.GetMouseButton(0) && flamethrower && canshoot)
         {
             flame.Play();
+            shootFlameThrower();
             gas--;
         }
         else
@@ -116,21 +155,29 @@ public class weapon : MonoBehaviour {
         }
 
     }
-    public void plasmagun()
+    public void shootPlasmaGun()
     {
-        plasmashot = Instantiate(plasma, weaponpos, Quaternion.identity);
+        plasmashot = Instantiate(plasma, transform.position, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force);
 
     }
     public void powerattackpl()
     {
-        plasmashot = Instantiate(plasma, weaponpos, Quaternion.identity);
+        plasmashot = Instantiate(plasma, transform.position, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force * powerattack);
         plasmashot.transform.localScale = new Vector3(3, 3, 3);
-
     }
+
+    public void shootFlameThrower()
+    {
+        flameShot = Instantiate(flameBullet, transform.position, Quaternion.identity);
+        flameBulletRB = flameShot.GetComponent<Rigidbody>();
+        flameBulletRB.AddForce(transform.forward * flameForce);
+    }
+
+    /*
     public void chooseweapon()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && flamethrowerpicked == true)
@@ -146,6 +193,7 @@ public class weapon : MonoBehaviour {
 
 
     }
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<weapon>() != null)
@@ -153,7 +201,7 @@ public class weapon : MonoBehaviour {
             flamethrowerpicked = true;
         }
     }
-
+    */
 
 }
 

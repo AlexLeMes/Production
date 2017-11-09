@@ -13,8 +13,8 @@ public class cameraController : MonoBehaviour {
 
     Vector3 playerPos;
     Vector3 gotoPos;
-    public float smoothing = 0.1f;
-    private Vector3 velocity = Vector3.zero;
+    //public float smoothing = 0.1f;
+    //private Vector3 velocity = Vector3.zero;
 
     public bool moveTowardsPlayer = false;
     public float moveTowardsPlayerSpeed = 5f;
@@ -30,7 +30,8 @@ public class cameraController : MonoBehaviour {
 
     private void Update()
     {
-        if(!moveTowardsPlayer)
+
+        if (!moveTowardsPlayer)
         {
             Vector3.MoveTowards(transform.position, player.transform.position, moveTowardsPlayerSpeed * Time.deltaTime);
             transform.LookAt(pTrans.transform);
@@ -38,7 +39,7 @@ public class cameraController : MonoBehaviour {
         else if(moveTowardsPlayer)
         {
             transform.position = pTrans.transform.position + offset;
-            transform.LookAt(pTrans.transform);
+            //transform.LookAt(pTrans.transform);
         }
 
     }
