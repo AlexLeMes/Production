@@ -67,11 +67,11 @@ public class player : character {
 
         Debug.DrawRay(transform.position, camera.transform.position, Color.green);
 
-        if (!Physics.Raycast(transform.position, camera.transform.position))
+        if((Vector3.Distance(transform.position,camera.transform.position)>11)||(!Physics.Raycast(transform.position, camera.transform.position)))
         {
             _camera.moveTowardsPlayer = true;
         }
-        else
+        else 
         {
             _camera.moveTowardsPlayer = false;
         }
@@ -144,13 +144,13 @@ public class player : character {
 
     public void OnCollisionEnter(Collision collision)
     {
-        /*
+        
         if (collision.gameObject.tag == "enemy")
         {
             takeDamage(0.1f);
             Debug.Log(health);
         }
-        */
+        
     }
     
 }

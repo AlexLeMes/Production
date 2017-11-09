@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4478096155421886}
   - component: {fileID: 33175259763254402}
   - component: {fileID: 23873256292807470}
-  - component: {fileID: 114172237099060306}
   - component: {fileID: 114029760991356938}
+  - component: {fileID: 114649877639814610}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -62,8 +62,8 @@ GameObject:
   - component: {fileID: 114873015616327666}
   - component: {fileID: 114553138784681900}
   - component: {fileID: 114347819395774538}
-  - component: {fileID: 114384082124865188}
   - component: {fileID: 114716562368739534}
+  - component: {fileID: 114025686490607392}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -248,6 +248,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114025686490607392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1759070967352830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c692d5b3313cd740bc827d7e155bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  stamina: 1
+  alive: 1
+  moveSpeed: 0
+  rotateSpeed: 0
+  boostSpeed: 0
+  weaponOneAmmo: 0
 --- !u!114 &114029760991356938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,35 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1759070967352830}
-  canShoot: 0
---- !u!114 &114172237099060306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427832679732698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362d9b9592a296348bbfeda570d2bbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flamethrower: 0
-  powerattacktimer: 0
-  ischarging: 0
-  flamethrowerpicked: 0
-  ammopack: {fileID: 0}
-  gaspack: {fileID: 0}
-  ammo: 120
-  gas: 2000
-  plasma: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
-  plasmashot: {fileID: 0}
-  weaponpos: {x: 0, y: 0, z: 0}
-  flame: {fileID: 198257072683375624}
-  force: 2000
-  powerattack: 5
-  plasmadf: 0
-  charging: {fileID: 198352198984223966}
-  ammoText: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
+  canShoot: 1
 --- !u!114 &114347819395774538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,25 +291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b53a2f397bb2b649a2310fe41539f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1427832679732698}
---- !u!114 &114384082124865188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1759070967352830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088f5620779eb714ca901bff3fb0a4c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  PlayerHealth: 1
-  healthBar: {fileID: 0}
-  maxStamina: 1
-  PlayerStamina: 1
-  staminaBar: {fileID: 0}
-  canmove: 1
+  player: {fileID: 0}
+  healAmmount: 5
+  ammoType: 0
+  ammoToGive: 0
+  cardID: 0
+  healthPickup: 0
+  ammoPickup: 0
+  keycard: 0
 --- !u!114 &114553138784681900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,10 +310,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7fc2229faa7f484483946f496aa39f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  target: {fileID: 0}
-  lookatLoc: {x: 0, y: 0, z: 0}
-  locationObject: {fileID: 0}
+--- !u!114 &114649877639814610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427832679732698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ac353f8e643cc4d909028414eac0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamethrower: 0
+  powerattacktimer: 0
+  ischarging: 0
+  flamethrowerpicked: 1
+  ammo: 50
+  gas: 50
+  plasma: {fileID: 1947198576155750, guid: e153c7b769d493049bc74da84b9e46f0, type: 2}
+  weaponpos: {x: 0, y: 0, z: 0}
+  flame: {fileID: 198257072683375624}
+  force: 4000
+  powerattack: 3
+  plasmadf: 0
+  charging: {fileID: 198352198984223966}
+  ammoText: {fileID: 0}
 --- !u!114 &114716562368739534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc3627977f0ca4408082f40c13aa88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardID: 0
   storedCards: 
 --- !u!114 &114873015616327666
 MonoBehaviour:
@@ -357,10 +359,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cb4c4a360d2d04fb62daa52c547a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  console: {fileID: 0}
+  health: 1
+  stamina: 1
+  alive: 1
   moveSpeed: 5
-  rotateSpeed: 75
+  rotateSpeed: 5
   boostSpeed: 10
+  weaponOneAmmo: 0
+  console: {fileID: 0}
+  deathMenu: {fileID: 0}
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!198 &198257072683375624
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -18,7 +18,7 @@ public class pickups : MonoBehaviour {
    
     public void Awake()
     {
-        player = gameObject.GetComponent<player>();
+       // player = gameObject.GetComponent<player>();
     }
 
 
