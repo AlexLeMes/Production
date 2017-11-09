@@ -1472,27 +1472,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1759070967352830, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
     type: 2}
   m_PrefabInternal: {fileID: 1491369722}
---- !u!114 &872983184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 872983183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68cb4c4a360d2d04fb62daa52c547a91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  stamina: 1
-  alive: 1
-  moveSpeed: 0
-  rotateSpeed: 0
-  boostSpeed: 0
-  weaponOneAmmo: 0
-  console: {fileID: 0}
-  healthBar: {fileID: 0}
-  staminaBar: {fileID: 0}
 --- !u!114 &872983189 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114873015616327666, guid: 99f8882cdbabbba4b86420b3e2be5ec4,
@@ -1845,6 +1824,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothing: 0.1
+  moveTowardsPlayer: 0
+  moveTowardsPlayerSpeed: 5
   offset: {x: 2, y: 3, z: -6}
 --- !u!81 &1248001878
 AudioListener:

@@ -33,7 +33,7 @@ public class cameraController : MonoBehaviour {
 
         if (!moveTowardsPlayer)
         {
-            Vector3.MoveTowards(transform.position, player.transform.position, moveTowardsPlayerSpeed * Time.deltaTime);
+            Vector3.MoveTowards(transform.position, player.transform.position+offset, moveTowardsPlayerSpeed* Time.deltaTime);
             transform.LookAt(pTrans.transform);
         }
         else if(moveTowardsPlayer)
