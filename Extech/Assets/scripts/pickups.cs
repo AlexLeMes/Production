@@ -22,14 +22,14 @@ public class pickups : MonoBehaviour {
    
     public void Awake()
     {
-<<<<<<< HEAD
+
         _player = GameObject.FindGameObjectWithTag("Player");
 
         _playerScript = _player.GetComponent<player>();
         _character = _player.GetComponent<character>();
-=======
+
        // player = gameObject.GetComponent<player>();
->>>>>>> 703491aa392b64ca7c0b120bafe6c592cb3e2ebd
+
     }
 
 

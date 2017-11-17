@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/scenes/main 1.unity
-=======
-- path: Assets/scenes/yousef.unity
->>>>>>> 703491aa392b64ca7c0b120bafe6c592cb3e2ebd
   isLoaded: 1
   isActive: 1
