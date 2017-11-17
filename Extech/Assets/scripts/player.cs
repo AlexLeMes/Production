@@ -17,9 +17,9 @@ public class player : character {
     public GameObject deathMenu;
     
     //PLAYER MOVE SPEED
-   //public float movespeed = 5f;
+    public float movespeed = 5f;
    //public float rotateSpeed = 90f;
-   //public float boostSpeed = 1f;
+    public float boostSpeed = 1f;
 
     //public Slider healthBar;
     public Slider staminaBar;
@@ -28,7 +28,7 @@ public class player : character {
     public GameObject camera;
     
     float stamnia = 1f;
-    float maxStam = 1;
+    float maxStam = 100;
 
     bool canMove = true;
     bool moving = false;
@@ -48,15 +48,8 @@ public class player : character {
        // _character = this.gameObject.GetComponent<character>();
     }
 
-    private new void Start()
+    private void Start()
     {
-        health = 1f;
-        moveSpeed = 5f;
-        rotateSpeed = 90f;
-        boostSpeed = 10f;
-        stamina = 1;
-
-        //healthBar.value = health;
         staminaBar.value = maxStam;
     }
 
@@ -65,11 +58,11 @@ public class player : character {
 
         Debug.DrawRay(transform.position, camera.transform.position, Color.green);
 
-        if((Vector3.Distance(transform.position,camera.transform.position)>11)||(!Physics.Raycast(transform.position, camera.transform.position)))
+        if (!Physics.Raycast(transform.position, camera.transform.position))
         {
             _camera.moveTowardsPlayer = true;
         }
-        else 
+        else
         {
             _camera.moveTowardsPlayer = false;
         }
@@ -144,13 +137,13 @@ public class player : character {
 
     public void OnCollisionEnter(Collision collision)
     {
-        
+        /*
         if (collision.gameObject.tag == "enemy")
         {
             takeDamage(0.1f);
             Debug.Log(health);
         }
-        
+        */
     }
     
 }

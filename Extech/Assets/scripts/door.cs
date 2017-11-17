@@ -11,7 +11,7 @@ public class door : MonoBehaviour {
         if(cardID == doorID)
         {
             openDoor();
-            Debug.Log("<color=green>VALID KEYCARD - openDoor</color>");
+            Debug.Log("<color=green>PLAYER HAS VALID KEYCARD - openDoor</color>");
         }
         else if (cardID != doorID)
         {

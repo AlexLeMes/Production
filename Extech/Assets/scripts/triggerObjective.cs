@@ -12,6 +12,13 @@ public class triggerObjective : MonoBehaviour {
 
     public bool objectiveComplete = false;
 
+    public bool isBombObjective = false;
+
+    public int objectiveID = 0;
+    public int completedID = 1;
+
+    public float objectiveTime = 0f;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,21 +30,28 @@ public class triggerObjective : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
-            _objectvies.modText(objectivesText);
+            toggleObjective();
         }
     }
 
-    public void completeObjective(bool complete)
+    public void toggleObjective()
     {
-        if(complete)
+        _objectvies.updateObjective(objectivesText, objectiveID);
+
+        if(isBombObjective)
         {
-            _objectvies.modText(objectiveCompleteText);
+            _objectvies.toggleBombObjective(objectiveTime);
         }
+
     }
 
-    public void bombObjective()
+    public void completeObjective(int id)
     {
-        //logic here
+        if(id == objectiveID)
+        {
+            _objectvies.updateObjective(objectiveCompleteText, objectiveID);
+            Debug.Log("ID WAS MATCH, OBJECTIVE COMPLETE");
+        }
     }
 
 }

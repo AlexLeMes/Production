@@ -15,6 +15,10 @@ public class Bullet : MonoBehaviour {
 
     float damageToDeal = 0f;
 
+    public float burnDamage = 5f;
+    public float burnTime = 5f;
+    public int burnTickRate = 1;
+
     character _charater;
 
     private void Start()
@@ -34,28 +38,38 @@ public class Bullet : MonoBehaviour {
         if(other.gameObject.tag == "enemy")
         {
             _charater = other.gameObject.GetComponent<character>();
-            if(_charater == null)
-            {
-                return;
-            }
-            else if(_charater != null)
-            {
-                Debug.Log("bullet found character script");
-            }
 
-            if (isPlasma)
+            if (_charater != null)
+            {
+                hitEnemy();
+            }
+        }
+        else
+        {
+            if(other.gameObject.GetComponent<MeshRenderer>() != null && other.gameObject.GetComponent<MeshRenderer>().enabled && !isFire)
             {
                 Instantiate(plasmaImpactEffect, transform.position, transform.rotation);
-                _charater.takeDamage(damageToDeal);
             }
-            else if(isFire)
-            {
-                _charater.setOnFire(fireImpactEffect);
-            }
-
-            Destroy(this.gameObject);
-
         }
+    }
+
+    public void hitEnemy()
+    {
+        if (isPlasma)
+        {
+            if (plasmaImpactEffect != null)
+            {
+                Instantiate(plasmaImpactEffect, transform.position, transform.rotation);
+            }
+
+            _charater.takeDamage(damageToDeal);
+        }
+        else if (isFire)
+        {
+            _charater.setOnFire(fireImpactEffect, burnTime, burnDamage, burnTickRate);
+        }
+
+        Destroy(this.gameObject);
     }
 
 

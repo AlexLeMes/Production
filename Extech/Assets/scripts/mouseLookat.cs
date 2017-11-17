@@ -10,15 +10,20 @@ public class mouseLookat : MonoBehaviour {
 
     //no longer using?
 
-    
 
-    private float sensetivity = 10f;
+    public float mouseSensitivity = 500f;
+
     Vector3 position;
     Vector3 direction;
     float angle;
 
     private void Update()
     {
+
+        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * mouseSensitivity * Time.deltaTime, Space.World);
+
+
+        /*
         // i just leart this so if u have any problems understandin let me know ill try to explain it to the best of my ablity if the comments didnt 
 
         // self explainatory
@@ -31,6 +36,7 @@ public class mouseLookat : MonoBehaviour {
         //Debug.Log(angle);
         //quaternion.angleaxis creats a relative rotation around ur coordiante and vector3.up is how u rotate 
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        */
     }
-    
+
 }

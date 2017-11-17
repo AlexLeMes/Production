@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class objectives : MonoBehaviour {
 
-    public string objectTiveText;
+    public string currentObjectiveText;
+    public string objectiveStatusText;
     public Text _objectiveText;
 
-    public bool isActive = false;
+    public bool bombObjectiveActive = false;
 
     public bool objectiveComplete = false;
 
-    public float objectiveTime = 0f;
+    public float bombObjectiveTime = 0f;
+
+    public int currentObjectiveID = 0;
 
     public GameObject explostion;
 
@@ -28,57 +31,71 @@ public class objectives : MonoBehaviour {
 
     private void Update()
     {
-        _objectiveText.text = objectTiveText;
+        _objectiveText.text = currentObjectiveText;
 
-        if(isActive && objectiveTime > 0)
+        if(bombObjectiveActive && bombObjectiveTime > 0)
         {
-            objectiveTime -= Time.deltaTime;
-            _objectiveText.text = objectiveTime.ToString("F2") + objectTiveText;
+            bombObjectiveTime -= Time.deltaTime;
+            _objectiveText.text = currentObjectiveText + " [TIME LEFT: " + bombObjectiveTime.ToString("F2") + "]";
 		}
 
-        if(!objectiveComplete && objectiveTime <= 0)
+        if(!objectiveComplete && bombObjectiveTime <= 0)
         {
-            failedObjective();
+            bombObjectiveFailed();
         }
-        else if(objectiveComplete && objectiveTime > 0)
+        else if(objectiveComplete && bombObjectiveTime > 0)
         {
-            succesfulObjective();
+            bombObjectiveSuccess();
         }
     }
 
-    public void failedObjective()
+    public void bombObjectiveFailed()
     {
         explostion.SetActive(true);
     }
 
-    public void succesfulObjective()
+    public void bombObjectiveSuccess()
     {
         successMenu.SetActive(true);
         // manger set time scale to 0 here
     }
 
+    public void updateObjective(string objectiveText, int id)
+    {
+        currentObjectiveText = objectiveText;
+
+        currentObjectiveID = id;
+    }
+
+    /*
     public void modText(string text)
     {
-        objectTiveText = text;
+        currentObjectiveText = text;
     }
+    */
+
+    public void toggleBombObjective(float time)
+    {
+        bombObjectiveTime = time;
+
+        bombObjectiveActive = true;
+    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        bool status = false;
+        //bool status = false;
 
         if(other.gameObject.tag == "objective")
         {
             _objectiveTrigger = other.gameObject.GetComponent<triggerObjective>();
 
-            status = true;
+            //status = true;
 
-            if (_objectiveText == null)
+            if (_objectiveText != null)
             {
-                return;
-            }
-            else
-            {
-                _objectiveTrigger.completeObjective(status);
+                _objectiveTrigger.completeObjective(currentObjectiveID);
             }
         }
     }

@@ -5,13 +5,12 @@ using UnityEngine;
 public class pickups : MonoBehaviour {
 
     GameObject _player;
-    public player _playerScript;
     public character _character;
 
 
     private keycard _keycard;
 
-    public float healAmmount = 5;
+    public float healAmmount = 0;
     public int ammoType = 0; // 0 = gas   --- plasma is infinite, so no ID for it
     public int ammoToGive = 0;
     public int cardID;
@@ -22,18 +21,13 @@ public class pickups : MonoBehaviour {
    
     public void Awake()
     {
-
         _player = GameObject.FindGameObjectWithTag("Player");
 
-        _playerScript = _player.GetComponent<player>();
         _character = _player.GetComponent<character>();
-
-       // player = gameObject.GetComponent<player>();
-
     }
 
 
-   public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -41,37 +35,24 @@ public class pickups : MonoBehaviour {
 
             if (healthPickup)
             {
-                _character.heal(healAmmount);
-                healthPickup = false;
-                Debug.Log("yes");
+                if (_character != null)
+                {
+                    _character.heal(healAmmount);
+                }  
             }
-            else
-            {
-                return;
-            }
-                //player.heal(healAmmount);
 
             if(ammoPickup)
             {
-                //player.giveAmmo(ammoToGive, ammoType);
-                if (_playerScript)
+                if (_character != null)
                 {
                     _character.giveAmmo(ammoToGive, ammoType);
-                }
-                else
-                {
-                    return;
                 }
             }
             if(keycard)
             {
                 _keycard = other.gameObject.GetComponent<keycard>();
 
-                if(_keycard == null)
-                {
-                    return;
-                }
-                else
+                if(_keycard != null)
                 {
                     _keycard.keycardPickup(cardID);
                 }

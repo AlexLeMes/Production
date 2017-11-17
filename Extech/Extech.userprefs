@@ -1,14 +1,13 @@
-﻿<Properties StartupConfiguration="{49359E72-B849-2741-508F-95E8499A9D80}|" StartupItem="Extech.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\pickups.cs">
+﻿<Properties StartupConfiguration="{49359E72-B849-2741-508F-95E8499A9D80}|">
+  <MonoDevelop.Ide.ItemProperties.Extech PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/objectives.cs">
     <Files>
-      <File FileName="Assets\scripts\weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\pickups.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\player.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\character.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\mouseLookat.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\cameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\gunLookat.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameController.cs" Line="17" Column="34" />
+      <File FileName="Assets/scripts/dev/patrolTest.cs" Line="11" Column="25" />
+      <File FileName="Assets/scripts/weapon.cs" Line="195" Column="54" />
+      <File FileName="Assets/scripts/Bullet.cs" Line="51" Column="89" />
+      <File FileName="Assets/scripts/character.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/cameraController.cs" Line="32" Column="65" />
+      <File FileName="Assets/scripts/objectives.cs" Line="47" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -17,5 +16,4 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Extech PreferredExecutionTarget="Unity.Editor" />
 </Properties>

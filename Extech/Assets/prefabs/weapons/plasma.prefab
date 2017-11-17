@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlasma: 1
   isFire: 0
-  plasmaDamage: 0.05
+  plasmaDamage: 5
   fireDamage: 0
   plasmaImpactEffect: {fileID: 1199159265891164, guid: 1f0769969be478a4e9ac7dd9af236c2c,
     type: 2}

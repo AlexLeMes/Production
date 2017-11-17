@@ -33,16 +33,6 @@ public class keycard : MonoBehaviour {
                 _door.accessDoor(cardID);
             }
         }
-        /*
-        if(other.gameObject.tag == "pickup")
-        {
-            card = other.gameObject.GetComponent<pickups>();
-            cardID = card.cardID;
-
-            storedCards[storedCardPos] = cardID;
-            storedCardPos++;
-        }
-        */
     }
     public void keycardPickup(int cardId)
     {

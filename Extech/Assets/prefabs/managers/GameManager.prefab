@@ -68,3 +68,4 @@ MonoBehaviour:
   console: {fileID: 0}
   _weapon: {fileID: 0}
   spawnPoint: {fileID: 0}
+  pauseMenuObj: {fileID: 0}
