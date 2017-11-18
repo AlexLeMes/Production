@@ -10,12 +10,18 @@ public class triggerObjective : MonoBehaviour {
     public string objectivesText;
     public string objectiveCompleteText;
 
+    public bool isGiveTrigger = false;
+    public bool isCompleteTrigger = false;
+   
+
     public bool objectiveComplete = false;
 
     public bool isBombObjective = false;
 
     public int objectiveID = 0;
     public int completedID = 1;
+
+    int playerObjectiveID = 0;
 
     public float objectiveTime = 0f;
 
@@ -28,29 +34,39 @@ public class triggerObjective : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && isGiveTrigger)
         {
-            toggleObjective();
+            givePlayerObjective();
         }
+        else if(other.gameObject.tag == "Player" && isCompleteTrigger)
+        {
+            playerObjectiveID = _objectvies.currentObjectiveID;
+
+            completeObjective(playerObjectiveID);
+        }
+
     }
 
-    public void toggleObjective()
+    public void givePlayerObjective()
     {
         _objectvies.updateObjective(objectivesText, objectiveID);
 
-        if(isBombObjective)
+        if (isBombObjective)
         {
             _objectvies.toggleBombObjective(objectiveTime);
         }
-
     }
 
     public void completeObjective(int id)
     {
-        if(id == objectiveID)
+        if(id == completedID)
         {
             _objectvies.updateObjective(objectiveCompleteText, objectiveID);
             Debug.Log("ID WAS MATCH, OBJECTIVE COMPLETE");
+        }
+        else if(id != completedID)
+        {
+            Debug.Log("ID WAS NOT MATCH");
         }
     }
 

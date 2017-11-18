@@ -39,12 +39,14 @@ public class objectives : MonoBehaviour {
             _objectiveText.text = currentObjectiveText + " [TIME LEFT: " + bombObjectiveTime.ToString("F2") + "]";
 		}
 
-        if(!objectiveComplete && bombObjectiveTime <= 0)
+        if(!objectiveComplete && bombObjectiveActive &&bombObjectiveTime <= 0)
         {
+            Debug.Log("BOMB OBJECTIVE FAILED");
             bombObjectiveFailed();
         }
-        else if(objectiveComplete && bombObjectiveTime > 0)
+        else if(objectiveComplete  && bombObjectiveTime > 0)
         {
+            Debug.Log("BOMB OBJECTIVE SUCCESS");
             bombObjectiveSuccess();
         }
     }
@@ -52,10 +54,12 @@ public class objectives : MonoBehaviour {
     public void bombObjectiveFailed()
     {
         explostion.SetActive(true);
+        Debug.Log("BOMB WENT OFF - PLAYER LOST");
     }
 
     public void bombObjectiveSuccess()
     {
+        bombObjectiveActive = false;
         successMenu.SetActive(true);
         // manger set time scale to 0 here
     }
@@ -66,13 +70,6 @@ public class objectives : MonoBehaviour {
 
         currentObjectiveID = id;
     }
-
-    /*
-    public void modText(string text)
-    {
-        currentObjectiveText = text;
-    }
-    */
 
     public void toggleBombObjective(float time)
     {
