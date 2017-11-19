@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class selfDestroy : MonoBehaviour {
 
-    public int destoryTime = 5;
+    public float destoryTime = 5;
 
     private void Start()
     {

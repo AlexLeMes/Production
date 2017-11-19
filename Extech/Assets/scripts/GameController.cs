@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -10,6 +12,9 @@ public class GameController : MonoBehaviour {
         TODO:
             //SET-UP SINGLETON
     */
+
+    int mainMenu = 0;
+    public int mainLevel = 1;
 
     public GameObject console;
     public weapon _weapon;
@@ -21,6 +26,8 @@ public class GameController : MonoBehaviour {
     Vector3 spawnLocation;
 
     bool isPaused = false;
+
+    public GameObject pauseMenuObj;
 
     private void Awake()
     {
@@ -47,6 +54,7 @@ public class GameController : MonoBehaviour {
         spawnLocation = spawnPoint.transform.position;
 
         console.SetActive(false);
+        pauseMenuObj.SetActive(false);
 
         respawn();
     }
@@ -58,6 +66,12 @@ public class GameController : MonoBehaviour {
             Debug.Log("PAUSE_GAME");
             pauseGame();
         }
+
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            console.SetActive(!console.activeSelf);
+        }
     }
 
     public void respawn()
@@ -67,7 +81,7 @@ public class GameController : MonoBehaviour {
 
     public void restartLevel()
     {
-
+        SceneManager.LoadScene(mainLevel);
     }
 
     public void pauseGame()
@@ -75,17 +89,24 @@ public class GameController : MonoBehaviour {
         if(Time.timeScale < 1)
         {
             Time.timeScale = 1;
+            pauseMenuObj.SetActive(false);
         }
         else if(Time.timeScale >= 1)
         {
             Time.timeScale = 0;
+            pauseMenuObj.SetActive(true);
         }
+    }
+
+    public void gotoMenu()
+    {
+        SceneManager.LoadScene(mainMenu);
     }
 
     
     public void debugAddAmmo()
     {
-        _weapon.ammo += 50;
+        _weapon.gas += 50;
     }
     
 }

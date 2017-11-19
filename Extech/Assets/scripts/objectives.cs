@@ -5,61 +5,96 @@ using UnityEngine.UI;
 
 public class objectives : MonoBehaviour {
 
-    public string objectTiveText;
-    public Text objText;
+    public string currentObjectiveText;
+    public string objectiveStatusText;
+    public Text _objectiveText;
 
-    public bool isActive = false;
+    public bool bombObjectiveActive = false;
 
     public bool objectiveComplete = false;
 
-    public float objectiveTime = 0f;
+    public float bombObjectiveTime = 0f;
+
+    public int currentObjectiveID = 0;
 
     public GameObject explostion;
 
     public GameObject successMenu;
 
+    triggerObjective _objectiveTrigger;
+
     private void Awake()
     {
         explostion.SetActive(false);
         successMenu.SetActive(false);
-
     }
 
     private void Update()
     {
-        objText.text = objectTiveText;
+        _objectiveText.text = currentObjectiveText;
 
-        if(isActive && objectiveTime <= 0)
+        if(bombObjectiveActive && bombObjectiveTime > 0)
         {
-            objectiveTime -= Time.deltaTime;
-            objText.text = objectiveTime.ToString() + objectTiveText;
+            bombObjectiveTime -= Time.deltaTime;
+            _objectiveText.text = currentObjectiveText + " [TIME LEFT: " + bombObjectiveTime.ToString("F2") + "]";
 		}
 
-        if(!objectiveComplete && objectiveTime <= 0)
+        if(!objectiveComplete && bombObjectiveActive &&bombObjectiveTime <= 0)
         {
-            failedObjective();
+            Debug.Log("BOMB OBJECTIVE FAILED");
+            bombObjectiveFailed();
         }
-        else if(objectiveComplete && objectiveTime > 0)
+        else if(objectiveComplete  && bombObjectiveTime > 0)
         {
-            succesfulObjective();
+            Debug.Log("BOMB OBJECTIVE SUCCESS");
+            bombObjectiveSuccess();
         }
     }
 
-    public void failedObjective()
+    public void bombObjectiveFailed()
     {
         explostion.SetActive(true);
+        Debug.Log("BOMB WENT OFF - PLAYER LOST");
     }
 
-    public void succesfulObjective()
+    public void bombObjectiveSuccess()
     {
+        bombObjectiveActive = false;
         successMenu.SetActive(true);
         // manger set time scale to 0 here
-
     }
 
-    public void modText(string text)
+    public void updateObjective(string objectiveText, int id)
     {
-        objectTiveText = text;
+        currentObjectiveText = objectiveText;
+
+        currentObjectiveID = id;
+    }
+
+    public void toggleBombObjective(float time)
+    {
+        bombObjectiveTime = time;
+
+        bombObjectiveActive = true;
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //bool status = false;
+
+        if(other.gameObject.tag == "objective")
+        {
+            _objectiveTrigger = other.gameObject.GetComponent<triggerObjective>();
+
+            //status = true;
+
+            if (_objectiveText != null)
+            {
+                _objectiveTrigger.completeObjective(currentObjectiveID);
+            }
+        }
     }
 
 }

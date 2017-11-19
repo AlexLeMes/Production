@@ -21,7 +21,7 @@ public class debug : MonoBehaviour {
 
         switch (command)
         {
-			case "respawn":
+            case "respawn":
                 GameController.instance.respawn();
 				break;
             case "add ammo":
@@ -30,8 +30,7 @@ public class debug : MonoBehaviour {
                 break;
             case "restart level":
                 Debug.Log("<color=purple>CONSOLE: restart level</color>");
-                Scene scene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(scene.name);
+                GameController.instance.restartLevel();
                 break;
             case "restart game":
                 Debug.Log("<color=purple>CONSOLE: restart game</color>");

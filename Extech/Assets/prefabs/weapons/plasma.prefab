@@ -56,11 +56,12 @@ GameObject:
   - component: {fileID: 135838924636621102}
   - component: {fileID: 23818945724279322}
   - component: {fileID: 54992873586050714}
-  - component: {fileID: 114651989865797554}
   - component: {fileID: 96493140577282224}
+  - component: {fileID: 114017308293243218}
+  - component: {fileID: 114740044346378044}
   m_Layer: 0
   m_Name: plasma
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819649527317586}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.5581465, y: 2.67, z: 18.306013}
+  m_LocalPosition: {x: 0.38766456, y: 1.69, z: 9.995902}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4471000309607748}
@@ -287,7 +288,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114651989865797554
+--- !u!114 &114017308293243218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -295,10 +296,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819649527317586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d39d3b0a5e8b78447b1304efaa30fb88, type: 3}
+  m_Script: {fileID: 11500000, guid: f6eee8fbfda48e5409fa9017fb3978a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imapctEffect: {fileID: 1199159265891164, guid: 1f0769969be478a4e9ac7dd9af236c2c,
+  destoryTime: 5
+--- !u!114 &114740044346378044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819649527317586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8283bb4f7a8089d438db74678067e7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlasma: 1
+  isFire: 0
+  plasmaDamage: 5
+  fireDamage: 0
+  plasmaImpactEffect: {fileID: 1199159265891164, guid: 1f0769969be478a4e9ac7dd9af236c2c,
+    type: 2}
+  fireImpactEffect: {fileID: 1132802778598138, guid: 4d38d9bf18b13ab4988cd1e01d57013a,
     type: 2}
 --- !u!135 &135838924636621102
 SphereCollider:
@@ -310,7 +329,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198840194714785606
 ParticleSystem:

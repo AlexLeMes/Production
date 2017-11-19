@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class pickups : MonoBehaviour {
 
-    public player player;
+    GameObject _player;
+    public character _character;
+
+
     private keycard _keycard;
 
-    public float healAmmount = 5;
+    public float healAmmount = 0;
     public int ammoType = 0; // 0 = gas   --- plasma is infinite, so no ID for it
     public int ammoToGive = 0;
     public int cardID;
@@ -18,60 +21,45 @@ public class pickups : MonoBehaviour {
    
     public void Awake()
     {
-       // player = gameObject.GetComponent<player>();
+        _player = GameObject.FindGameObjectWithTag("Player");
+
+        _character = _player.GetComponent<character>();
     }
 
 
-   public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<player>() != null)
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("pickup - hit player");
 
-            if (healthPickup == true && player != null)
+            if (healthPickup)
             {
-                player.heal(healAmmount);
-                healthPickup = false;
-                Debug.Log("yes");
+                if (_character != null)
+                {
+                    _character.heal(healAmmount);
+                }  
             }
-            else
-            {
-                return;
-            }
-                //player.heal(healAmmount);
 
-
-               
-            
             if(ammoPickup)
             {
-                //player.giveAmmo(ammoToGive, ammoType);
-                player = other.gameObject.GetComponent<player>();
-
-                if (player == null)
+                if (_character != null)
                 {
-                    return;
-                }
-                else
-                {
-                    player.giveAmmo(ammoToGive, ammoType);
+                    _character.giveAmmo(ammoToGive, ammoType);
                 }
             }
             if(keycard)
             {
                 _keycard = other.gameObject.GetComponent<keycard>();
 
-                if(_keycard == null)
-                {
-                    return;
-                }
-                else
+                if(_keycard != null)
                 {
                     _keycard.keycardPickup(cardID);
                 }
             }
 
             Destroy(this.gameObject);
+
         }
     }
 }
