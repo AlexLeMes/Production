@@ -55,6 +55,8 @@ public class triggerObjective : MonoBehaviour {
         {
             _objectvies.toggleBombObjective(objectiveTime);
         }
+
+        this.gameObject.SetActive(false);
     }
 
     public void completeObjective(int id)

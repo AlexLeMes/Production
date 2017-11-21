@@ -1,4 +1,5 @@
-OSXStandalone
+WindowsStandalone
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.teleportSpawn
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -147,8 +148,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
+2bfd34763e4ec058092f3f5074b2c15b Assembly-CSharp.dll:.PathFinding
 c244dbf79bb0b759cbcdff545f5f1dc2 Assembly-CSharp.dll:.selfDestroy
-9f194f8ee977f3db18bbff79beefd18d Assembly-CSharp.dll:.triggerObjective
+bd0170aef1961d6d709e9dcd234671ad Assembly-CSharp.dll:.triggerObjective
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.fire
 f207a4ac1903c1d0beb45c81cda3aa92 Assembly-CSharp.dll:.objectives
 06e15622d90afb3c85c7d5602475c2ec Assembly-CSharp.dll:.weapon
