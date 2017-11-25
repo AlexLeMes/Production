@@ -57,10 +57,15 @@ public class cameraController : MonoBehaviour {
     
     private void LateUpdate()
     {
+
         float direction = pTrans.transform.eulerAngles.y;
         Quaternion rotation = Quaternion.Euler(0, direction, 0);
 
+       
+
+
         transform.position = pTrans.transform.position + rotation * offset;
+        
         transform.LookAt(lookat);
     }     
     

@@ -5,22 +5,26 @@ using UnityEngine;
 public class attack : Node
 {
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+    
     public override void Execute()
     {
-        state = Node_State.success;
-        Debug.Log("attack");
+      
+
+
+        if (Vector3.Distance(BT.transform.position, BT.player.transform.position) < 2)
+        {
+            Debug.Log("attack"+state);
+            state = Node_State.success;
+            BT.pct.takeDamage(0.1f);
+            //attack animation here
+
+        }
+        else
+        {
+            state = Node_State.faliure;
+        }
+        
+        
 
     }
 }

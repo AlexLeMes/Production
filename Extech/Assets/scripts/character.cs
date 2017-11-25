@@ -66,6 +66,7 @@ public class character : MonoBehaviour {
         {
             characterHealthBar.value = health;
         }
+        
 
         if(health <= 0)
         {
@@ -100,6 +101,7 @@ public class character : MonoBehaviour {
             die();
         }
     }
+  
 
 
     public void heal(float healAmount)
